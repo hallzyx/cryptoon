@@ -1,0 +1,466 @@
+{
+  "series": [
+    {
+      "id": 1,
+      "title": "Shadow Realm Chronicles",
+      "author": "Alex Kim",
+      "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400&h=600&fit=crop",
+      "banner": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&h=400&fit=crop",
+      "genre": "Fantasy",
+      "rating": 9.8,
+      "views": "2.5M",
+      "likes": "450K",
+      "status": "Ongoing",
+      "description": "Un joven descubre un poder ancestral que lo conecta con el reino de las sombras. En un mundo donde la luz y la oscuridad luchan por el control, debe aprender a dominar sus habilidades antes de que sea demasiado tarde.",
+      "tags": ["Fantasy", "Action", "Adventure", "Supernatural"],
+      "freeChapters": 4,
+      "totalChapters": 5,
+      "chapters": [
+        {
+          "id": 1,
+          "title": "El Despertar",
+          "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
+          "date": "2024-01-15",
+          "views": "1.2M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "title": "El Portal Oscuro",
+          "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
+          "date": "2024-01-22",
+          "views": "980K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 3,
+          "title": "La Primera Batalla",
+          "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
+          "date": "2024-01-29",
+          "views": "850K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 4,
+          "title": "Aliados Inesperados",
+          "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
+          "date": "2024-02-05",
+          "views": "720K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 5,
+          "title": "El Secreto del Reino",
+          "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
+          "date": "2024-02-12",
+          "views": "650K",
+          "free": false,
+          "price": "0.01"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Neon City Nights",
+      "author": "Sarah Chen",
+      "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=600&fit=crop",
+      "banner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=400&fit=crop",
+      "genre": "Sci-Fi",
+      "rating": 9.5,
+      "views": "1.8M",
+      "likes": "320K",
+      "status": "Ongoing",
+      "description": "En una ciudad futurista, un hacker busca la verdad detrás de una conspiración global. Las luces de neón ocultan secretos que podrían cambiar el destino de la humanidad.",
+      "tags": ["Sci-Fi", "Cyberpunk", "Thriller", "Mystery"],
+      "freeChapters": 4,
+      "totalChapters": 5,
+      "chapters": [
+        {
+          "id": 1,
+          "title": "La Ciudad de Neón",
+          "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
+          "date": "2024-01-10",
+          "views": "890K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "title": "Hackeo al Sistema",
+          "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
+          "date": "2024-01-17",
+          "views": "760K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 3,
+          "title": "La Conspiración",
+          "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
+          "date": "2024-01-24",
+          "views": "680K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 4,
+          "title": "Persecución Nocturna",
+          "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
+          "date": "2024-01-31",
+          "views": "620K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 5,
+          "title": "La Verdad Revelada",
+          "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
+          "date": "2024-02-07",
+          "views": "580K",
+          "free": false,
+          "price": "0.01"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mystic Academy",
+      "author": "Jun Park",
+      "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&h=600&fit=crop",
+      "banner": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&h=400&fit=crop",
+      "genre": "Magic",
+      "rating": 9.3,
+      "views": "3.2M",
+      "likes": "580K",
+      "status": "Ongoing",
+      "description": "Academia de magia donde estudiantes aprenden a dominar elementos y enfrentan amenazas oscuras. Entre clases, rivalidades y secretos ancestrales, los jóvenes magos deben prepararse para la batalla definitiva.",
+      "tags": ["Magic", "School", "Adventure", "Fantasy"],
+      "freeChapters": 4,
+      "totalChapters": 5,
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Bienvenida a la Academia",
+          "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
+          "date": "2024-01-05",
+          "views": "1.5M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "title": "Primera Lección de Magia",
+          "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
+          "date": "2024-01-12",
+          "views": "1.3M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 3,
+          "title": "El Torneo de Elementos",
+          "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
+          "date": "2024-01-19",
+          "views": "1.1M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 4,
+          "title": "Secretos del Pasado",
+          "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
+          "date": "2024-01-26",
+          "views": "980K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 5,
+          "title": "La Amenaza Oscura",
+          "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
+          "date": "2024-02-02",
+          "views": "890K",
+          "free": false,
+          "price": "0.01"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Demon Hunter Zero",
+      "author": "Mike Tanaka",
+      "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=400&h=600&fit=crop",
+      "banner": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=1200&h=400&fit=crop",
+      "genre": "Action",
+      "rating": 9.6,
+      "views": "2.1M",
+      "likes": "410K",
+      "status": "Ongoing",
+      "description": "Cazador de demonios en un mundo post-apocalíptico donde criaturas sobrenaturales dominan. Con su espada maldita y habilidades únicas, lucha por proteger a los últimos sobrevivientes.",
+      "tags": ["Action", "Demons", "Dark Fantasy", "Gore"],
+      "freeChapters": 4,
+      "totalChapters": 5,
+      "chapters": [
+        {
+          "id": 1,
+          "title": "El Último Cazador",
+          "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
+          "date": "2024-01-08",
+          "views": "1.1M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "title": "La Espada Maldita",
+          "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
+          "date": "2024-01-15",
+          "views": "950K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 3,
+          "title": "Batalla en las Ruinas",
+          "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
+          "date": "2024-01-22",
+          "views": "820K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 4,
+          "title": "El Pacto Demoníaco",
+          "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
+          "date": "2024-01-29",
+          "views": "740K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 5,
+          "title": "Rey de los Demonios",
+          "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
+          "date": "2024-02-05",
+          "views": "680K",
+          "free": false,
+          "price": "0.01"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Love in Pixels",
+      "author": "Emma Wilson",
+      "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=600&fit=crop",
+      "banner": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&h=400&fit=crop",
+      "genre": "Romance",
+      "rating": 9.1,
+      "views": "2.8M",
+      "likes": "620K",
+      "status": "Ongoing",
+      "description": "Historia de amor en la industria de los videojuegos. Una desarrolladora y un streamer famoso descubren que el amor verdadero puede florecer incluso en el mundo digital.",
+      "tags": ["Romance", "Gaming", "Comedy", "Slice of Life"],
+      "freeChapters": 4,
+      "totalChapters": 5,
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Match Encontrado",
+          "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
+          "date": "2024-01-03",
+          "views": "1.3M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "title": "Bugs y Mariposas",
+          "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
+          "date": "2024-01-10",
+          "views": "1.1M",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 3,
+          "title": "Colaboración Especial",
+          "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
+          "date": "2024-01-17",
+          "views": "980K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 4,
+          "title": "Confesión en Stream",
+          "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
+          "date": "2024-01-24",
+          "views": "890K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 5,
+          "title": "Update del Corazón",
+          "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
+          "date": "2024-01-31",
+          "views": "820K",
+          "free": false,
+          "price": "0.01"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Galaxy Warriors",
+      "author": "David Martinez",
+      "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400&h=600&fit=crop",
+      "banner": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&h=400&fit=crop",
+      "genre": "Space Opera",
+      "rating": 9.4,
+      "views": "1.9M",
+      "likes": "380K",
+      "status": "Ongoing",
+      "description": "Épica batalla espacial entre imperios galácticos. Un grupo de rebeldes lucha por la libertad mientras descubren una antigua tecnología que podría cambiar el curso de la guerra.",
+      "tags": ["Sci-Fi", "Space", "War", "Epic"],
+      "freeChapters": 4,
+      "totalChapters": 5,
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Rebelión Estelar",
+          "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
+          "date": "2024-01-06",
+          "views": "950K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 2,
+          "title": "Batalla de Orión",
+          "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
+          "date": "2024-01-13",
+          "views": "820K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 3,
+          "title": "Tecnología Ancestral",
+          "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
+          "date": "2024-01-20",
+          "views": "740K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 4,
+          "title": "Alianza Galáctica",
+          "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
+          "date": "2024-01-27",
+          "views": "680K",
+          "free": true,
+          "price": "0.00"
+        },
+        {
+          "id": 5,
+          "title": "Guerra Final",
+          "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
+          "date": "2024-02-03",
+          "views": "620K",
+          "free": false,
+          "price": "0.01"
+        }
+      ]
+    }
+  ],
+  "chapterContent": {
+    "1": {
+      "1": {
+        "id": 1,
+        "title": "El Despertar",
+        "seriesTitle": "Shadow Realm Chronicles",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": null,
+        "nextChapter": 2
+      },
+      "2": {
+        "id": 2,
+        "title": "El Portal Oscuro",
+        "seriesTitle": "Shadow Realm Chronicles",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 1,
+        "nextChapter": 3
+      },
+      "3": {
+        "id": 3,
+        "title": "La Primera Batalla",
+        "seriesTitle": "Shadow Realm Chronicles",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 2,
+        "nextChapter": 4
+      },
+      "4": {
+        "id": 4,
+        "title": "Aliados Inesperados",
+        "seriesTitle": "Shadow Realm Chronicles",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 3,
+        "nextChapter": 5
+      }
+    },
+    "2": {
+      "1": {
+        "id": 1,
+        "title": "La Ciudad de Neón",
+        "seriesTitle": "Neon City Nights",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": null,
+        "nextChapter": 2
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { 
   useCurrentUser,
   useIsSignedIn,
@@ -11,6 +12,7 @@ import {
 } from "@coinbase/cdp-hooks";
 
 export default function Home() {
+  const router = useRouter();
   const { currentUser } = useCurrentUser();
   const { isSignedIn } = useIsSignedIn();
   const { signInWithEmail } = useSignInWithEmail();
@@ -26,6 +28,13 @@ export default function Home() {
   const [error, setError] = useState("");
 
   const address = currentUser?.evmAccounts?.[0];
+
+  // Redirect to series if signed in
+  useEffect(() => {
+    if (isSignedIn && address) {
+      router.push("/series");
+    }
+  }, [isSignedIn, address, router]);
 
   // Handle email sign in
   const handleEmailSignIn = async () => {
