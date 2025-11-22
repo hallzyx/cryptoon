@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useCurrentUser, useIsSignedIn } from "@coinbase/cdp-hooks";
+import { useCurrentUser, useIsSignedIn, useSignOut } from "@coinbase/cdp-hooks";
 import { useParams } from "next/navigation";
-import { FaStar, FaEye, FaHeart, FaLock, FaPlay, FaGithub, FaTwitter, FaUser } from "react-icons/fa";
+import { FaStar, FaEye, FaHeart, FaLock, FaPlay, FaGithub, FaTwitter, FaUser, FaCog, FaSignOutAlt, FaWallet, FaChevronDown } from "react-icons/fa";
 import { IoSparkles } from "react-icons/io5";
 import { MdTheaterComedy } from "react-icons/md";
 
@@ -15,10 +15,16 @@ export default function SeriesDetailPage() {
   const id = params?.id as string;
   const { currentUser } = useCurrentUser();
   const { isSignedIn } = useIsSignedIn();
+  const { signOut } = useSignOut();
   const address = currentUser?.evmAccounts?.[0];
   const [sortOrder, setSortOrder] = useState<"latest" | "oldest">("latest");
   const [series, setSeries] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [balance, setBalance] = useState<string>("0");
+  const [loadingBalance, setLoadingBalance] = useState(false);
+  const [requestingFaucet, setRequestingFaucet] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     fetch('/db.json')
@@ -33,6 +39,85 @@ export default function SeriesDetailPage() {
         setLoading(false);
       });
   }, [id]);
+
+  // Fetch balance when address changes
+  useEffect(() => {
+    if (address) {
+      fetchBalance();
+    }
+  }, [address]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowProfileMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const fetchBalance = async () => {
+    if (!address) return;
+    
+    setLoadingBalance(true);
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/balance/${address}`);
+      const data = await response.json();
+      
+      if (data.success) {
+        setBalance(data.balance);
+      }
+    } catch (error) {
+      console.error('Error fetching balance:', error);
+    } finally {
+      setLoadingBalance(false);
+    }
+  };
+
+  const handleRequestFaucet = async () => {
+    if (!address) return;
+    
+    setRequestingFaucet(true);
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/faucet`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ address }),
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        alert(`Success! You received ${data.amount} ${data.token}\n\nTransaction: ${data.transactionHash}\n\nBalance will update in a few seconds.`);
+        setTimeout(() => {
+          fetchBalance();
+        }, 3000);
+      } else {
+        alert(`Error: ${data.message || 'Failed to request faucet'}`);
+      }
+    } catch (error) {
+      console.error('Error requesting faucet:', error);
+      alert('Error requesting faucet. Please try again.');
+    } finally {
+      setRequestingFaucet(false);
+    }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      setShowProfileMenu(false);
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
   
   // Ordenar capítulos según el estado
   const sortedChapters = series ? [...series.chapters].sort((a: any, b: any) => {
@@ -74,21 +159,108 @@ export default function SeriesDetailPage() {
               </span>
             </Link>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {isSignedIn && address ? (
                 <>
-                  <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-purple-900/30 rounded-lg border border-purple-500/30">
-                    <span className="text-xs text-purple-300">
-                      {address.slice(0, 6)}...{address.slice(-4)}
-                    </span>
+                  {/* Balance Display */}
+                  <div className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-green-900/30 to-green-800/30 rounded-lg border border-green-500/30">
+                    <div className="text-right">
+                      <div className="text-xs text-green-300 font-medium">
+                        {loadingBalance ? (
+                          <span className="animate-pulse">Loading...</span>
+                        ) : (
+                          <>{parseFloat(balance).toFixed(2)} USDC</>
+                        )}
+                      </div>
+                      <div className="text-[10px] text-green-400/60">Base Sepolia</div>
+                    </div>
                   </div>
-                  <Link
-                    href="/profile"
-                    className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
-                  >
-                    <FaUser />
-                    <span>Profile</span>
-                  </Link>
+
+                  {/* Profile Dropdown */}
+                  <div className="relative" ref={dropdownRef}>
+                    <button
+                      onClick={() => setShowProfileMenu(!showProfileMenu)}
+                      className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors text-sm font-medium flex items-center gap-2"
+                    >
+                      <FaUser />
+                      <span className="hidden sm:inline">Profile</span>
+                      <FaChevronDown className={`text-xs transition-transform ${showProfileMenu ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    {showProfileMenu && (
+                      <div className="absolute right-0 mt-2 w-64 bg-gray-900 border border-purple-500/30 rounded-lg shadow-xl overflow-hidden z-50">
+                        {/* Wallet Address */}
+                        <div className="px-4 py-3 bg-purple-900/20 border-b border-purple-500/20">
+                          <div className="flex items-center gap-2 text-xs text-gray-400 mb-1">
+                            <FaWallet />
+                            <span>Wallet Address</span>
+                          </div>
+                          <div className="text-sm text-purple-300 font-mono">
+                            {address.slice(0, 6)}...{address.slice(-4)}
+                          </div>
+                          <button
+                            onClick={() => {
+                              navigator.clipboard.writeText(address);
+                              alert('Address copied to clipboard!');
+                            }}
+                            className="text-xs text-purple-400 hover:text-purple-300 mt-1"
+                          >
+                            Copy full address
+                          </button>
+                        </div>
+
+                        {/* Menu Options */}
+                        <div className="py-1">
+                          {/* Faucet Option */}
+                          <button
+                            onClick={() => {
+                              setShowProfileMenu(false);
+                              handleRequestFaucet();
+                            }}
+                            disabled={requestingFaucet}
+                            className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-purple-900/30 transition-colors text-left disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            <span className="text-yellow-400 text-sm">💰</span>
+                            <div>
+                              <div className="text-sm text-white">Get Testnet USDC</div>
+                              <div className="text-xs text-gray-400">Request 1 USDC</div>
+                            </div>
+                          </button>
+
+                          {/* Configuration */}
+                          <button
+                            onClick={() => {
+                              setShowProfileMenu(false);
+                              alert('Configuration page coming soon!');
+                            }}
+                            className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-purple-900/30 transition-colors text-left"
+                          >
+                            <FaCog className="text-gray-400" />
+                            <div>
+                              <div className="text-sm text-white">Configuration</div>
+                              <div className="text-xs text-gray-400">Settings & preferences</div>
+                            </div>
+                          </button>
+
+                          {/* Divider */}
+                          <div className="border-t border-purple-500/20 my-1"></div>
+
+                          {/* Sign Out */}
+                          <button
+                            onClick={handleSignOut}
+                            className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-red-900/30 transition-colors text-left text-red-400 hover:text-red-300"
+                          >
+                            <FaSignOutAlt />
+                            <div>
+                              <div className="text-sm">Sign Out</div>
+                              <div className="text-xs text-gray-400">Disconnect wallet</div>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </>
               ) : (
                 <Link

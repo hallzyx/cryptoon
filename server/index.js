@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { requestFaucet } from "./faucet.js";
+import { getTokenBalances } from "./balances.js";
 
 dotenv.config();
 
@@ -80,6 +82,75 @@ app.post("/api/memes", (req, res) => {
       timestamp: new Date().toISOString()
     }
   });
+});
+
+// Faucet endpoint - Request testnet USDC
+app.post("/api/faucet", async (req, res) => {
+  try {
+    const { address } = req.body;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    const apiKeyId = process.env.CDP_API_KEY_ID;
+    const apiKeySecret = process.env.CDP_API_KEY_SECRET;
+
+    if (!apiKeyId || !apiKeySecret) {
+      return res.status(500).json({ error: "CDP API credentials not configured" });
+    }
+
+    console.log(`Requesting faucet for address: ${address}`);
+    const txHash = await requestFaucet(address, apiKeyId, apiKeySecret);
+
+    res.json({
+      success: true,
+      transactionHash: txHash,
+      amount: "0.1",
+      token: "USDC",
+      network: "base-sepolia"
+    });
+  } catch (error) {
+    console.error("Faucet error:", error);
+    res.status(500).json({ 
+      error: "Failed to request faucet",
+      message: error.message 
+    });
+  }
+});
+
+// Balance endpoint - Get token balances
+app.get("/api/balance/:address", async (req, res) => {
+  try {
+    const { address } = req.params;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    const apiKeyId = process.env.CDP_API_KEY_ID;
+    const apiKeySecret = process.env.CDP_API_KEY_SECRET;
+
+    if (!apiKeyId || !apiKeySecret) {
+      return res.status(500).json({ error: "CDP API credentials not configured" });
+    }
+
+    const balance = await getTokenBalances(address, "base-sepolia", apiKeyId, apiKeySecret);
+
+    res.json({
+      success: true,
+      address,
+      balance,
+      token: "USDC",
+      network: "base-sepolia"
+    });
+  } catch (error) {
+    console.error("Balance error:", error);
+    res.status(500).json({ 
+      error: "Failed to fetch balance",
+      message: error.message 
+    });
+  }
 });
 
 // Error handling
