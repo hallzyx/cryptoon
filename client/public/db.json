@@ -444,6 +444,23 @@
         ],
         "prevChapter": 3,
         "nextChapter": 5
+      },
+      "5": {
+        "id": 5,
+        "title": "El Secreto del Reino",
+        "seriesTitle": "Shadow Realm Chronicles",
+        "images": [
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 4,
+        "nextChapter": null
       }
     },
     "2": {
@@ -460,6 +477,386 @@
         ],
         "prevChapter": null,
         "nextChapter": 2
+      },
+      "2": {
+        "id": 2,
+        "title": "Hackeo al Sistema",
+        "seriesTitle": "Neon City Nights",
+        "images": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 1,
+        "nextChapter": 3
+      },
+      "3": {
+        "id": 3,
+        "title": "Código Rojo",
+        "seriesTitle": "Neon City Nights",
+        "images": [
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 2,
+        "nextChapter": 4
+      },
+      "4": {
+        "id": 4,
+        "title": "Conspiración Digital",
+        "seriesTitle": "Neon City Nights",
+        "images": [
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 3,
+        "nextChapter": 5
+      },
+      "5": {
+        "id": 5,
+        "title": "La Verdad Revelada",
+        "seriesTitle": "Neon City Nights",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 4,
+        "nextChapter": null
+      }
+    },
+    "3": {
+      "1": {
+        "id": 1,
+        "title": "El Primer Caso",
+        "seriesTitle": "Mystic Detective",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": null,
+        "nextChapter": 2
+      },
+      "2": {
+        "id": 2,
+        "title": "Pistas Ocultas",
+        "seriesTitle": "Mystic Detective",
+        "images": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 1,
+        "nextChapter": 3
+      },
+      "3": {
+        "id": 3,
+        "title": "Magia y Misterio",
+        "seriesTitle": "Mystic Detective",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 2,
+        "nextChapter": 4
+      },
+      "4": {
+        "id": 4,
+        "title": "El Culpable Imposible",
+        "seriesTitle": "Mystic Detective",
+        "images": [
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 3,
+        "nextChapter": 5
+      },
+      "5": {
+        "id": 5,
+        "title": "Resolviendo el Enigma",
+        "seriesTitle": "Mystic Detective",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 4,
+        "nextChapter": null
+      }
+    },
+    "4": {
+      "1": {
+        "id": 1,
+        "title": "Primer Día de Clases",
+        "seriesTitle": "School of Magic",
+        "images": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": null,
+        "nextChapter": 2
+      },
+      "2": {
+        "id": 2,
+        "title": "El Hechizo Básico",
+        "seriesTitle": "School of Magic",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 1,
+        "nextChapter": 3
+      },
+      "3": {
+        "id": 3,
+        "title": "Duelo de Magia",
+        "seriesTitle": "School of Magic",
+        "images": [
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 2,
+        "nextChapter": 4
+      },
+      "4": {
+        "id": 4,
+        "title": "Examen Final",
+        "seriesTitle": "School of Magic",
+        "images": [
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 3,
+        "nextChapter": 5
+      },
+      "5": {
+        "id": 5,
+        "title": "Graduación Mágica",
+        "seriesTitle": "School of Magic",
+        "images": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 4,
+        "nextChapter": null
+      }
+    },
+    "5": {
+      "1": {
+        "id": 1,
+        "title": "Match Encontrado",
+        "seriesTitle": "Love in Pixels",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": null,
+        "nextChapter": 2
+      },
+      "2": {
+        "id": 2,
+        "title": "Bugs y Mariposas",
+        "seriesTitle": "Love in Pixels",
+        "images": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 1,
+        "nextChapter": 3
+      },
+      "3": {
+        "id": 3,
+        "title": "Colaboración Especial",
+        "seriesTitle": "Love in Pixels",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 2,
+        "nextChapter": 4
+      },
+      "4": {
+        "id": 4,
+        "title": "Confesión en Stream",
+        "seriesTitle": "Love in Pixels",
+        "images": [
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 3,
+        "nextChapter": 5
+      },
+      "5": {
+        "id": 5,
+        "title": "Update del Corazón",
+        "seriesTitle": "Love in Pixels",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 4,
+        "nextChapter": null
+      }
+    },
+    "6": {
+      "1": {
+        "id": 1,
+        "title": "Rebelión Estelar",
+        "seriesTitle": "Galaxy Warriors",
+        "images": [
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": null,
+        "nextChapter": 2
+      },
+      "2": {
+        "id": 2,
+        "title": "Batalla de Orión",
+        "seriesTitle": "Galaxy Warriors",
+        "images": [
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 1,
+        "nextChapter": 3
+      },
+      "3": {
+        "id": 3,
+        "title": "Tecnología Ancestral",
+        "seriesTitle": "Galaxy Warriors",
+        "images": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 2,
+        "nextChapter": 4
+      },
+      "4": {
+        "id": 4,
+        "title": "Alianza Galáctica",
+        "seriesTitle": "Galaxy Warriors",
+        "images": [
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 3,
+        "nextChapter": 5
+      },
+      "5": {
+        "id": 5,
+        "title": "Guerra Final",
+        "seriesTitle": "Galaxy Warriors",
+        "images": [
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop"
+        ],
+        "prevChapter": 4,
+        "nextChapter": null
       }
     }
   }

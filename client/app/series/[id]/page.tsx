@@ -24,6 +24,7 @@ export default function SeriesDetailPage() {
   const [loadingBalance, setLoadingBalance] = useState(false);
   const [requestingFaucet, setRequestingFaucet] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [purchasedChapters, setPurchasedChapters] = useState<Set<string>>(new Set());
   const dropdownRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -40,12 +41,13 @@ export default function SeriesDetailPage() {
       });
   }, [id]);
 
-  // Fetch balance when address changes
+  // Fetch balance and purchases when address changes
   useEffect(() => {
     if (address) {
       fetchBalance();
+      fetchPurchases();
     }
-  }, [address]);
+  }, [address, id]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -75,6 +77,29 @@ export default function SeriesDetailPage() {
       console.error('Error fetching balance:', error);
     } finally {
       setLoadingBalance(false);
+    }
+  };
+
+  const fetchPurchases = async () => {
+    if (!address) return;
+    
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/purchases/${address}`);
+      const data = await response.json();
+      
+      if (data.success) {
+        // Create a Set of "seriesId_chapterId" keys for quick lookup
+        const purchased = new Set(
+          data.purchases
+            .filter((p: any) => p.seriesId === id)
+            .map((p: any) => `${p.seriesId}_${p.chapterId}`)
+        );
+        setPurchasedChapters(purchased);
+        console.log('💰 Purchased chapters loaded:', purchased.size);
+      }
+    } catch (error) {
+      console.error('Error fetching purchases:', error);
     }
   };
 
@@ -384,11 +409,11 @@ export default function SeriesDetailPage() {
             {sortedChapters.map((chapter: any) => (
               <Link
                 key={chapter.id}
-                href={chapter.free ? `/read/${series.id}/${chapter.id}` : "#"}
+                href={`/read/${series.id}/${chapter.id}`}
                 className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${
                   chapter.free
                     ? "bg-purple-900/20 border-purple-500/20 hover:bg-purple-900/30 hover:border-purple-500/40"
-                    : "bg-gray-900/40 border-gray-700/40 hover:bg-gray-900/60"
+                    : "bg-gray-900/40 border-gray-700/40 hover:bg-gray-900/60 cursor-pointer"
                 }`}
               >
                 {/* Thumbnail */}
@@ -406,15 +431,20 @@ export default function SeriesDetailPage() {
                     <h3 className="font-medium text-lg truncate">
                       Episode {chapter.id}: {chapter.title}
                     </h3>
-                    {!chapter.free ? (
-                      <span className="flex items-center gap-1 px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs font-medium">
-                        <FaLock className="text-xs" />
-                        <span>{chapter.price} USDC</span>
-                      </span>
-                    ) : (
+                    {chapter.free ? (
                       <span className="flex items-center gap-1 px-2 py-0.5 bg-green-500/20 text-green-400 rounded text-xs font-medium">
                         <IoSparkles className="text-xs" />
                         <span>FREE</span>
+                      </span>
+                    ) : purchasedChapters.has(`${series.id}_${chapter.id}`) ? (
+                      <span className="flex items-center gap-1 px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded text-xs font-medium">
+                        <IoSparkles className="text-xs" />
+                        <span>OWNED</span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-1 px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs font-medium">
+                        <FaLock className="text-xs" />
+                        <span>{chapter.price} USDC</span>
                       </span>
                     )}
                   </div>
@@ -431,6 +461,11 @@ export default function SeriesDetailPage() {
                 <div className="flex-shrink-0">
                   {chapter.free ? (
                     <div className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+                      <FaPlay className="text-xs" />
+                      <span>Read</span>
+                    </div>
+                  ) : purchasedChapters.has(`${series.id}_${chapter.id}`) ? (
+                    <div className="px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 shadow-lg shadow-amber-500/20">
                       <FaPlay className="text-xs" />
                       <span>Read</span>
                     </div>

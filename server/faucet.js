@@ -11,7 +11,7 @@ export async function requestFaucet(address, apiKeyId, apiKeySecret) {
     requestMethod: "POST",
     requestHost: "api.cdp.coinbase.com",
     requestPath: "/platform/v2/evm/faucet",
-    expiresIn: 120,
+    //expiresIn: 120,
   });
 
   const response = await fetch('https://api.cdp.coinbase.com/platform/v2/evm/faucet', {

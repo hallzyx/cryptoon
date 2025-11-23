@@ -1,0 +1,12 @@
+{
+  "purchases": [
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "txHash": "x402-payment",
+      "amount": "0.01 USDC",
+      "timestamp": "2025-11-23T00:05:18.304Z"
+    }
+  ]
+}
