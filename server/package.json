@@ -2,7 +2,7 @@
   "name": "cryptoon-server",
   "version": "1.0.0",
   "type": "module",
-  "description": "Cryptoon NFT Memes Backend",
+  "description": "Cryptoon crypto-manga site Backend",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

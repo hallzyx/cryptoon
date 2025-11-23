@@ -92,11 +92,9 @@ export default function AIRecommendationChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 rounded-full shadow-lg shadow-purple-500/30 transition-all hover:scale-105"
+          className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-gradient-to-br from-purple-600 via-purple-500 to-indigo-500 hover:from-purple-500 hover:via-purple-400 hover:to-indigo-400 rounded-full shadow-xl shadow-purple-900/50 border border-purple-400/30 backdrop-blur-sm transition-all hover:scale-110 hover:shadow-purple-700/60"
         >
-          <FaRobot className="text-xl" />
-          <span className="font-medium">AI Recommendations</span>
-          <IoSparkles className="text-yellow-400" />
+          <FaRobot className="text-2xl text-white" />
         </button>
       )}
 
@@ -165,8 +163,8 @@ export default function AIRecommendationChat() {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-purple-500/30 bg-gray-900/50">
-            <div className="flex gap-2">
+          <div className="p-4 border-t border-purple-500/30 bg-gradient-to-b from-gray-900 to-black">
+            <div className="flex gap-3">
               <input
                 type="text"
                 value={input}
@@ -174,12 +172,12 @@ export default function AIRecommendationChat() {
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                 placeholder="What kind of story are you looking for?"
                 disabled={loading || !address}
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 disabled:opacity-50"
+                className="flex-1 px-4 py-3 bg-gray-800/90 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-gray-800 disabled:opacity-50 transition-all"
               />
               <button
                 onClick={handleSendMessage}
                 disabled={loading || !input.trim() || !address}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-semibold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 shadow-lg shadow-purple-500/30"
               >
                 Send
               </button>

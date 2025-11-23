@@ -154,7 +154,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
             🎭 Cryptoon
           </h1>
-          <p className="text-gray-400">NFT Memes en Blockchain</p>
+          <p className="text-gray-400">Support with crypto to your favorite artists</p>
         </div>
 
         {/* Auth Card */}

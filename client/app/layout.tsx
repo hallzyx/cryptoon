@@ -6,8 +6,8 @@ import { BalanceProvider } from "./contexts/BalanceContext";
 import AIRecommendationChat from "./components/AIRecommendationChat";
 
 export const metadata: Metadata = {
-  title: "Cryptoon - NFT Memes",
-  description: "Create and collect NFT memes",
+  title: "Cryptoon - Crypto-manga site",
+  description: "Help to your artist with crypto!",
 };
 
 export default function RootLayout({
