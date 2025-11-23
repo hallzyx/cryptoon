@@ -6,6 +6,15 @@ node_modules/
 .env.local
 .env*.local
 
+# Agent wallet data (contains sensitive keys)
+agentWalletData.json
+
+# Storage files (generated at runtime)
+purchases.json
+favorites.json
+agentSettings.json
+agentHistory.json
+
 # OS files
 .DS_Store
 .DS_Store?
