@@ -498,23 +498,18 @@ sequenceDiagram
     participant n8n as n8n Webhook
     participant OpenAI
     
-    User->>Frontend: "Ask character a question"
+    User->>Frontend: Ask character a question
     Frontend->>Backend: POST /api/chat (requires payment)
-    Backend-->>Frontend: 402 Payment Required<br/>(0.01 USDC)
+    Backend-->>Frontend: 402 Payment Required (0.01 USDC)
     Frontend->>User: Show payment modal
     User->>x402: Pay 0.01 USDC
-    x402->>Backend: Payment verified ✅
+    x402->>Backend: Payment verified
     Backend->>n8n: Forward chat request
     n8n->>OpenAI: Generate character response
     OpenAI-->>n8n: AI response
     n8n-->>Backend: Character message
     Backend-->>Frontend: Display chat response
     Frontend->>User: Show AI character reply
-    
-    style User fill:#e1f5ff
-    style x402 fill:#fff4e6
-    style n8n fill:#f3e5f5
-    style OpenAI fill:#e8f5e9
 ```
 
 **Implementation Details:**
