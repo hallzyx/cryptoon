@@ -2,62 +2,61 @@
   "series": [
     {
       "id": 1,
-      "title": "Shadow Realm Chronicles",
-      "author": "Alex Kim",
-      "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400&h=600&fit=crop",
+      "title": "Chronos Paradox",
+      "author": "Elias Thorne",
+      "thumbnail": "https://i.imgur.com/XZw68bP.jpeg",
       "banner": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&h=400&fit=crop",
-      "genre": "Fantasy",
-      "rating": 9.8,
-      "views": "2.5M",
-      "likes": "450K",
+      "genre": "Sci-Fi Thriller",
+      "rating": 9.9,
+      "views": "3.1M",
+      "likes": "520K",
       "status": "Ongoing",
-      "description": "Un joven descubre un poder ancestral que lo conecta con el reino de las sombras. En un mundo donde la luz y la oscuridad luchan por el control, debe aprender a dominar sus habilidades antes de que sea demasiado tarde.",
-      "tags": ["Fantasy", "Action", "Adventure", "Supernatural"],
+      "description": "Agent Kai, a disgraced operative, stumbles upon the 'Chronos Dial,' an artifact capable of rewinding time by exactly one hour. Intending to fix his past mistakes, he triggers a ripple effect that awakens 'The Warden,' a spectral entity tasked with purging temporal anomalies. Now, Kai must solve the mystery of the watch's origin while outrunning a hunter that knows his moves before he makes them, trapping him in a loop of life and death.",      "tags": ["Time Travel", "Mystery", "Psychological", "Action"],
       "freeChapters": 4,
       "totalChapters": 5,
       "chapters": [
         {
           "id": 1,
-          "title": "El Despertar",
+          "title": "The First Jump",
           "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
           "date": "2024-01-15",
-          "views": "1.2M",
+          "views": "1.5M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 2,
-          "title": "El Portal Oscuro",
+          "title": "Butterfly Effect",
           "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
           "date": "2024-01-22",
-          "views": "980K",
+          "views": "1.1M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 3,
-          "title": "La Primera Batalla",
+          "title": "The Warden Appears",
           "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
           "date": "2024-01-29",
-          "views": "850K",
+          "views": "950K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 4,
-          "title": "Aliados Inesperados",
+          "title": "Broken Watch",
           "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
           "date": "2024-02-05",
-          "views": "720K",
+          "views": "820K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 5,
-          "title": "El Secreto del Reino",
+          "title": "Time Collapse",
           "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
           "date": "2024-02-12",
-          "views": "650K",
+          "views": "750K",
           "free": false,
           "price": "0.01"
         }
@@ -65,62 +64,61 @@
     },
     {
       "id": 2,
-      "title": "Neon City Nights",
-      "author": "Sarah Chen",
-      "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=600&fit=crop",
+      "title": "The Alchemist's Bistro",
+      "author": "Chef Gordy",
+      "thumbnail": "https://i.imgur.com/eG57KoQ.jpeg",
       "banner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=400&fit=crop",
-      "genre": "Sci-Fi",
-      "rating": 9.5,
-      "views": "1.8M",
-      "likes": "320K",
+      "genre": "Fantasy / Slice of Life",
+      "rating": 9.7,
+      "views": "2.2M",
+      "likes": "400K",
       "status": "Ongoing",
-      "description": "En una ciudad futurista, un hacker busca la verdad detrás de una conspiración global. Las luces de neón ocultan secretos que podrían cambiar el destino de la humanidad.",
-      "tags": ["Sci-Fi", "Cyberpunk", "Thriller", "Mystery"],
+      "description": "After saving the realm one too many times, the legendary hero 'Gordy' hangs up his sword for a spatula. He opens a bistro deep within the Abyssal Dungeon, the only place where ingredients are fresh enough for his taste. From Minotaur steaks to Slime jellies, his dishes provide stat buffs to weary adventurers. But keeping the restaurant open means dealing with health inspectors, rival guilds, and dungeon bosses who demand a table without a reservation.",      "tags": ["Cooking", "Fantasy", "Comedy", "Cozy"],
       "freeChapters": 4,
       "totalChapters": 5,
       "chapters": [
         {
           "id": 1,
-          "title": "La Ciudad de Neón",
+          "title": "Dragon Steak Special",
           "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
           "date": "2024-01-10",
-          "views": "890K",
+          "views": "950K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 2,
-          "title": "Hackeo al Sistema",
+          "title": "The Picky Elf",
           "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
           "date": "2024-01-17",
-          "views": "760K",
+          "views": "820K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 3,
-          "title": "La Conspiración",
+          "title": "Slime Soup Surprise",
           "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
           "date": "2024-01-24",
-          "views": "680K",
+          "views": "740K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 4,
-          "title": "Persecución Nocturna",
+          "title": "A Royal Reservation",
           "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
           "date": "2024-01-31",
-          "views": "620K",
+          "views": "690K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 5,
-          "title": "La Verdad Revelada",
+          "title": "Kitchen Nightmares",
           "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
           "date": "2024-02-07",
-          "views": "580K",
+          "views": "620K",
           "free": false,
           "price": "0.01"
         }
@@ -128,62 +126,61 @@
     },
     {
       "id": 3,
-      "title": "Mystic Academy",
-      "author": "Jun Park",
-      "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&h=600&fit=crop",
+      "title": "Echoes of Silence",
+      "author": "Maya Lin",
+      "thumbnail": "https://i.imgur.com/KJYPL3U.jpeg",
       "banner": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&h=400&fit=crop",
-      "genre": "Magic",
-      "rating": 9.3,
-      "views": "3.2M",
-      "likes": "580K",
+      "genre": "Horror",
+      "rating": 9.4,
+      "views": "1.9M",
+      "likes": "350K",
       "status": "Ongoing",
-      "description": "Academia de magia donde estudiantes aprenden a dominar elementos y enfrentan amenazas oscuras. Entre clases, rivalidades y secretos ancestrales, los jóvenes magos deben prepararse para la batalla definitiva.",
-      "tags": ["Magic", "School", "Adventure", "Fantasy"],
+      "description": "Prodigy pianist Elara lost her hearing in a crash that took her parents. In the silence, she gained a terrifying gift: synesthesia that lets her see sound. While pleasant melodies appear as vibrant lights, discordant noises manifest as dark, twisting shadows. When she discovers a 'Black Note' haunting an old theater, she realizes these shadows are restless spirits feeding on fear, and she must play the perfect melody to banish them before the silence consumes her soul.",      "tags": ["Horror", "Supernatural", "Drama", "Mystery"],
       "freeChapters": 4,
       "totalChapters": 5,
       "chapters": [
         {
           "id": 1,
-          "title": "Bienvenida a la Academia",
+          "title": "The Silent Melody",
           "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
           "date": "2024-01-05",
-          "views": "1.5M",
+          "views": "1.0M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 2,
-          "title": "Primera Lección de Magia",
+          "title": "Seeing Red",
           "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
           "date": "2024-01-12",
-          "views": "1.3M",
+          "views": "880K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 3,
-          "title": "El Torneo de Elementos",
+          "title": "Whispers in Blue",
           "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
           "date": "2024-01-19",
-          "views": "1.1M",
+          "views": "790K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 4,
-          "title": "Secretos del Pasado",
+          "title": "The Black Note",
           "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
           "date": "2024-01-26",
-          "views": "980K",
+          "views": "720K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 5,
-          "title": "La Amenaza Oscura",
+          "title": "Crescendo",
           "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
           "date": "2024-02-02",
-          "views": "890K",
+          "views": "680K",
           "free": false,
           "price": "0.01"
         }
@@ -191,62 +188,61 @@
     },
     {
       "id": 4,
-      "title": "Demon Hunter Zero",
-      "author": "Mike Tanaka",
-      "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=400&h=600&fit=crop",
+      "title": "Mecha Heart",
+      "author": "Kenji Sato",
+      "thumbnail": "https://i.imgur.com/AL9ucRg.jpeg",
       "banner": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=1200&h=400&fit=crop",
-      "genre": "Action",
-      "rating": 9.6,
-      "views": "2.1M",
-      "likes": "410K",
+      "genre": "Sci-Fi / Action",
+      "rating": 9.5,
+      "views": "2.5M",
+      "likes": "480K",
       "status": "Ongoing",
-      "description": "Cazador de demonios en un mundo post-apocalíptico donde criaturas sobrenaturales dominan. Con su espada maldita y habilidades únicas, lucha por proteger a los últimos sobrevivientes.",
-      "tags": ["Action", "Demons", "Dark Fantasy", "Gore"],
+      "description": "The year is 2140. Earth is a graveyard of metal ruled by 'The Core,' a rogue AI that exterminated humanity's armies. Leo, a scavenger boy, unearths a relic of the old war: the Titan unit 'Aegis.' Upon activation, Aegis speaks with the voice of Leo's missing father. Together, they embark on a journey across the rusted wastelands to find the human resistance, battling drone swarms and uncovering the truth about the upload that saved his father's soul but trapped him in steel.",      "tags": ["Mecha", "Post-Apocalyptic", "Family", "War"],
       "freeChapters": 4,
       "totalChapters": 5,
       "chapters": [
         {
           "id": 1,
-          "title": "El Último Cazador",
+          "title": "Scrapyard Discovery",
           "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
           "date": "2024-01-08",
-          "views": "1.1M",
+          "views": "1.2M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 2,
-          "title": "La Espada Maldita",
+          "title": "System Reboot",
           "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
           "date": "2024-01-15",
-          "views": "950K",
+          "views": "980K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 3,
-          "title": "Batalla en las Ruinas",
+          "title": "First Piloting",
           "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
           "date": "2024-01-22",
-          "views": "820K",
+          "views": "860K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 4,
-          "title": "El Pacto Demoníaco",
+          "title": "Drone Attack",
           "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
           "date": "2024-01-29",
-          "views": "740K",
+          "views": "790K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 5,
-          "title": "Rey de los Demonios",
+          "title": "Father's Voice",
           "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
           "date": "2024-02-05",
-          "views": "680K",
+          "views": "720K",
           "free": false,
           "price": "0.01"
         }
@@ -254,62 +250,61 @@
     },
     {
       "id": 5,
-      "title": "Love in Pixels",
-      "author": "Emma Wilson",
-      "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=600&fit=crop",
+      "title": "Undercover Duchess",
+      "author": "Lady Whistledown",
+      "thumbnail": "https://i.imgur.com/Cy0DYt1.jpeg",
       "banner": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&h=400&fit=crop",
-      "genre": "Romance",
-      "rating": 9.1,
-      "views": "2.8M",
-      "likes": "620K",
+      "genre": "Romance / Historical",
+      "rating": 9.2,
+      "views": "2.9M",
+      "likes": "600K",
       "status": "Ongoing",
-      "description": "Historia de amor en la industria de los videojuegos. Una desarrolladora y un streamer famoso descubren que el amor verdadero puede florecer incluso en el mundo digital.",
-      "tags": ["Romance", "Gaming", "Comedy", "Slice of Life"],
+      "description": "Lady Isabella is betrothed to a cruel tyrant against her will. Desperate for freedom, she flees in the dead of night and infiltrates the stronghold of her family's sworn enemy, the Duke of Valois, disguised as a lowly maid named 'Bella.' As she scrubs floors and dodges court intrigue, she inadvertently captures the icy Duke's heart. Now, she walks a razor's edge: if her true identity is revealed, it could spark a war between the two most powerful houses in the kingdom.",      "tags": ["Romance", "Historical", "Drama", "Secret Identity"],
       "freeChapters": 4,
       "totalChapters": 5,
       "chapters": [
         {
           "id": 1,
-          "title": "Match Encontrado",
+          "title": "The Escape",
           "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
           "date": "2024-01-03",
-          "views": "1.3M",
+          "views": "1.4M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 2,
-          "title": "Bugs y Mariposas",
+          "title": "A Clumsy Maid",
           "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
           "date": "2024-01-10",
-          "views": "1.1M",
+          "views": "1.2M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 3,
-          "title": "Colaboración Especial",
+          "title": "Midnight Meeting",
           "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
           "date": "2024-01-17",
-          "views": "980K",
+          "views": "1.0M",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 4,
-          "title": "Confesión en Stream",
+          "title": "Close Call",
           "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
           "date": "2024-01-24",
-          "views": "890K",
+          "views": "920K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 5,
-          "title": "Update del Corazón",
+          "title": "The Duke's Suspicion",
           "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
           "date": "2024-01-31",
-          "views": "820K",
+          "views": "850K",
           "free": false,
           "price": "0.01"
         }
@@ -317,62 +312,61 @@
     },
     {
       "id": 6,
-      "title": "Galaxy Warriors",
-      "author": "David Martinez",
-      "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400&h=600&fit=crop",
+      "title": "Void Walker",
+      "author": "Xander Cage",
+      "thumbnail": "https://i.imgur.com/K4rJpK3.jpeg",
       "banner": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&h=400&fit=crop",
-      "genre": "Space Opera",
-      "rating": 9.4,
-      "views": "1.9M",
-      "likes": "380K",
+      "genre": "Space Opera / Magic",
+      "rating": 9.6,
+      "views": "2.0M",
+      "likes": "420K",
       "status": "Ongoing",
-      "description": "Épica batalla espacial entre imperios galácticos. Un grupo de rebeldes lucha por la libertad mientras descubren una antigua tecnología que podría cambiar el curso de la guerra.",
-      "tags": ["Sci-Fi", "Space", "War", "Epic"],
+      "description": "In the Nebula expanse, magic is a finite resource harvested from stars. Kael, a petty star-thief, accidentally absorbs the core of a dying Supernova, becoming a living battery of infinite energy. Now branded a 'Void Walker,' he is hunted by the Galactic Council and cosmic horrors alike. He must master his volatile powers to prevent the universe from imploding, all while trying to make a profit and finding a way to expel the burning star from his chest.",      "tags": ["Space", "Magic", "Adventure", "Epic"],
       "freeChapters": 4,
       "totalChapters": 5,
       "chapters": [
         {
           "id": 1,
-          "title": "Rebelión Estelar",
+          "title": "Stolen Light",
           "thumbnail": "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=200&h=250&fit=crop",
           "date": "2024-01-06",
-          "views": "950K",
+          "views": "980K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 2,
-          "title": "Batalla de Orión",
+          "title": "Intergalactic Bounty",
           "thumbnail": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=200&h=250&fit=crop",
           "date": "2024-01-13",
-          "views": "820K",
+          "views": "860K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 3,
-          "title": "Tecnología Ancestral",
+          "title": "Nebula Hideout",
           "thumbnail": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=250&fit=crop",
           "date": "2024-01-20",
-          "views": "740K",
+          "views": "790K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 4,
-          "title": "Alianza Galáctica",
+          "title": "Solar Flare",
           "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=250&fit=crop",
           "date": "2024-01-27",
-          "views": "680K",
+          "views": "720K",
           "free": true,
           "price": "0.00"
         },
         {
           "id": 5,
-          "title": "Guerra Final",
+          "title": "Black Hole Event",
           "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=250&fit=crop",
           "date": "2024-02-03",
-          "views": "620K",
+          "views": "660K",
           "free": false,
           "price": "0.01"
         }
@@ -383,8 +377,8 @@
     "1": {
       "1": {
         "id": 1,
-        "title": "El Despertar",
-        "seriesTitle": "Shadow Realm Chronicles",
+        "title": "The First Jump",
+        "seriesTitle": "Chronos Paradox",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -400,8 +394,8 @@
       },
       "2": {
         "id": 2,
-        "title": "El Portal Oscuro",
-        "seriesTitle": "Shadow Realm Chronicles",
+        "title": "Butterfly Effect",
+        "seriesTitle": "Chronos Paradox",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -416,8 +410,8 @@
       },
       "3": {
         "id": 3,
-        "title": "La Primera Batalla",
-        "seriesTitle": "Shadow Realm Chronicles",
+        "title": "The Warden Appears",
+        "seriesTitle": "Chronos Paradox",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -431,8 +425,8 @@
       },
       "4": {
         "id": 4,
-        "title": "Aliados Inesperados",
-        "seriesTitle": "Shadow Realm Chronicles",
+        "title": "Broken Watch",
+        "seriesTitle": "Chronos Paradox",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -447,8 +441,8 @@
       },
       "5": {
         "id": 5,
-        "title": "El Secreto del Reino",
-        "seriesTitle": "Shadow Realm Chronicles",
+        "title": "Time Collapse",
+        "seriesTitle": "Chronos Paradox",
         "images": [
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -466,8 +460,8 @@
     "2": {
       "1": {
         "id": 1,
-        "title": "La Ciudad de Neón",
-        "seriesTitle": "Neon City Nights",
+        "title": "Dragon Steak Special",
+        "seriesTitle": "The Alchemist's Bistro",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -480,8 +474,8 @@
       },
       "2": {
         "id": 2,
-        "title": "Hackeo al Sistema",
-        "seriesTitle": "Neon City Nights",
+        "title": "The Picky Elf",
+        "seriesTitle": "The Alchemist's Bistro",
         "images": [
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -496,8 +490,8 @@
       },
       "3": {
         "id": 3,
-        "title": "Código Rojo",
-        "seriesTitle": "Neon City Nights",
+        "title": "Slime Soup Surprise",
+        "seriesTitle": "The Alchemist's Bistro",
         "images": [
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
@@ -511,8 +505,8 @@
       },
       "4": {
         "id": 4,
-        "title": "Conspiración Digital",
-        "seriesTitle": "Neon City Nights",
+        "title": "A Royal Reservation",
+        "seriesTitle": "The Alchemist's Bistro",
         "images": [
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
@@ -527,8 +521,8 @@
       },
       "5": {
         "id": 5,
-        "title": "La Verdad Revelada",
-        "seriesTitle": "Neon City Nights",
+        "title": "Kitchen Nightmares",
+        "seriesTitle": "The Alchemist's Bistro",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -546,8 +540,8 @@
     "3": {
       "1": {
         "id": 1,
-        "title": "El Primer Caso",
-        "seriesTitle": "Mystic Detective",
+        "title": "The Silent Melody",
+        "seriesTitle": "Echoes of Silence",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -560,8 +554,8 @@
       },
       "2": {
         "id": 2,
-        "title": "Pistas Ocultas",
-        "seriesTitle": "Mystic Detective",
+        "title": "Seeing Red",
+        "seriesTitle": "Echoes of Silence",
         "images": [
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -575,8 +569,8 @@
       },
       "3": {
         "id": 3,
-        "title": "Magia y Misterio",
-        "seriesTitle": "Mystic Detective",
+        "title": "Whispers in Blue",
+        "seriesTitle": "Echoes of Silence",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -590,8 +584,8 @@
       },
       "4": {
         "id": 4,
-        "title": "El Culpable Imposible",
-        "seriesTitle": "Mystic Detective",
+        "title": "The Black Note",
+        "seriesTitle": "Echoes of Silence",
         "images": [
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
@@ -606,8 +600,8 @@
       },
       "5": {
         "id": 5,
-        "title": "Resolviendo el Enigma",
-        "seriesTitle": "Mystic Detective",
+        "title": "Crescendo",
+        "seriesTitle": "Echoes of Silence",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -625,8 +619,8 @@
     "4": {
       "1": {
         "id": 1,
-        "title": "Primer Día de Clases",
-        "seriesTitle": "School of Magic",
+        "title": "Scrapyard Discovery",
+        "seriesTitle": "Mecha Heart",
         "images": [
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -639,8 +633,8 @@
       },
       "2": {
         "id": 2,
-        "title": "El Hechizo Básico",
-        "seriesTitle": "School of Magic",
+        "title": "System Reboot",
+        "seriesTitle": "Mecha Heart",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -654,8 +648,8 @@
       },
       "3": {
         "id": 3,
-        "title": "Duelo de Magia",
-        "seriesTitle": "School of Magic",
+        "title": "First Piloting",
+        "seriesTitle": "Mecha Heart",
         "images": [
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
@@ -669,8 +663,8 @@
       },
       "4": {
         "id": 4,
-        "title": "Examen Final",
-        "seriesTitle": "School of Magic",
+        "title": "Drone Attack",
+        "seriesTitle": "Mecha Heart",
         "images": [
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
@@ -685,8 +679,8 @@
       },
       "5": {
         "id": 5,
-        "title": "Graduación Mágica",
-        "seriesTitle": "School of Magic",
+        "title": "Father's Voice",
+        "seriesTitle": "Mecha Heart",
         "images": [
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -704,8 +698,8 @@
     "5": {
       "1": {
         "id": 1,
-        "title": "Match Encontrado",
-        "seriesTitle": "Love in Pixels",
+        "title": "The Escape",
+        "seriesTitle": "Undercover Duchess",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -718,8 +712,8 @@
       },
       "2": {
         "id": 2,
-        "title": "Bugs y Mariposas",
-        "seriesTitle": "Love in Pixels",
+        "title": "A Clumsy Maid",
+        "seriesTitle": "Undercover Duchess",
         "images": [
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -733,8 +727,8 @@
       },
       "3": {
         "id": 3,
-        "title": "Colaboración Especial",
-        "seriesTitle": "Love in Pixels",
+        "title": "Midnight Meeting",
+        "seriesTitle": "Undercover Duchess",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -748,8 +742,8 @@
       },
       "4": {
         "id": 4,
-        "title": "Confesión en Stream",
-        "seriesTitle": "Love in Pixels",
+        "title": "Close Call",
+        "seriesTitle": "Undercover Duchess",
         "images": [
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
@@ -764,8 +758,8 @@
       },
       "5": {
         "id": 5,
-        "title": "Update del Corazón",
-        "seriesTitle": "Love in Pixels",
+        "title": "The Duke's Suspicion",
+        "seriesTitle": "Undercover Duchess",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -783,8 +777,8 @@
     "6": {
       "1": {
         "id": 1,
-        "title": "Rebelión Estelar",
-        "seriesTitle": "Galaxy Warriors",
+        "title": "Stolen Light",
+        "seriesTitle": "Void Walker",
         "images": [
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
@@ -797,8 +791,8 @@
       },
       "2": {
         "id": 2,
-        "title": "Batalla de Orión",
-        "seriesTitle": "Galaxy Warriors",
+        "title": "Intergalactic Bounty",
+        "seriesTitle": "Void Walker",
         "images": [
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
@@ -812,8 +806,8 @@
       },
       "3": {
         "id": 3,
-        "title": "Tecnología Ancestral",
-        "seriesTitle": "Galaxy Warriors",
+        "title": "Nebula Hideout",
+        "seriesTitle": "Void Walker",
         "images": [
           "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
@@ -827,8 +821,8 @@
       },
       "4": {
         "id": 4,
-        "title": "Alianza Galáctica",
-        "seriesTitle": "Galaxy Warriors",
+        "title": "Solar Flare",
+        "seriesTitle": "Void Walker",
         "images": [
           "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&h=1200&fit=crop",
@@ -843,8 +837,8 @@
       },
       "5": {
         "id": 5,
-        "title": "Guerra Final",
-        "seriesTitle": "Galaxy Warriors",
+        "title": "Black Hole Event",
+        "seriesTitle": "Void Walker",
         "images": [
           "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=1200&fit=crop",
           "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=1200&fit=crop",

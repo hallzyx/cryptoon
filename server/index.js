@@ -66,7 +66,7 @@ app.get("/api/chapter-free/:seriesId/:chapterId", async (req, res) => {
   }
 });
 
-// Apply x402 payment middleware ONLY for premium chapters
+// Apply x402 payment middleware ONLY for premium chapters and AI recommendations
 app.use(paymentMiddleware(
   RECEIVER_WALLET,
   {
@@ -80,6 +80,20 @@ app.use(paymentMiddleware(
           properties: {
             chapter: { type: "object", description: "Chapter content" },
             purchased: { type: "boolean" }
+          }
+        }
+      }
+    },
+    "POST /api/recommendations/request": {
+      price: "$0.01",  // 0.01 USDC per AI recommendation
+      network: "base-sepolia",
+      config: {
+        description: "Get AI-powered manga/webtoon recommendation",
+        outputSchema: {
+          type: "object",
+          properties: {
+            recommendation: { type: "string", description: "AI generated recommendation" },
+            success: { type: "boolean" }
           }
         }
       }
@@ -98,7 +112,10 @@ app.get("/", (req, res) => {
       "GET /health": "Health check",
       "POST /api/faucet": "Request testnet USDC",
       "GET /api/balance/:address": "Get wallet balance",
-      "GET /api/chapters/:seriesId/:chapterId": "Get chapter (x402 payment)"
+      "GET /api/chapter-free/:seriesId/:chapterId": "Get free or purchased chapter",
+      "GET /api/chapters/:seriesId/:chapterId": "Unlock premium chapter (x402)",
+      "POST /api/recommendations/request": "Get AI recommendation (x402)",
+      "GET /api/purchases/:address": "Get user purchases"
     },
     payment: {
       price: "0.01 USDC",
@@ -171,6 +188,92 @@ app.get("/api/chapters/:seriesId/:chapterId", async (req, res) => {
     console.error("❌ Error:", error);
     res.status(500).json({ 
       error: "Failed to fetch chapter",
+      message: error.message 
+    });
+  }
+});
+
+// AI Recommendations endpoint - x402 enabled
+app.post("/api/recommendations/request", async (req, res) => {
+  try {
+    const { userId, prompt } = req.body;
+    
+    console.log(`\n🤖 AI Recommendation request from: ${userId}`);
+    console.log(`   📝 Prompt: ${prompt}`);
+
+    if (!userId || !prompt) {
+      return res.status(400).json({ error: "userId and prompt are required" });
+    }
+
+    // If we reach here, x402 middleware has verified payment
+    console.log(`   ✅ Payment verified by x402 middleware`);
+    
+    // Send request to n8n webhook
+    try {
+      console.log(`   🔗 Sending to n8n webhook...`);
+      const webhookResponse = await fetch('https://n8n.arroz.dev/webhook/cryptoon-recommendation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId,
+          prompt,
+          paid: true,
+          amount: "0.01 USDC",
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      if (!webhookResponse.ok) {
+        throw new Error(`Webhook responded with status ${webhookResponse.status}`);
+      }
+
+      const webhookData = await webhookResponse.json();
+      console.log(`   ✅ n8n response received:`, JSON.stringify(webhookData, null, 2));
+
+      // Extract recommendation from n8n response
+      // n8n returns an array like: [{ "output": "recommendation text" }]
+      let recommendation = "Recommendation generated successfully!";
+      
+      if (Array.isArray(webhookData) && webhookData.length > 0 && webhookData[0].output) {
+        recommendation = webhookData[0].output;
+      } else if (webhookData.output) {
+        recommendation = webhookData.output;
+      } else if (webhookData.recommendation) {
+        recommendation = webhookData.recommendation;
+      } else if (webhookData.message) {
+        recommendation = webhookData.message;
+      }
+
+      res.json({
+        success: true,
+        recommendation,
+        paid: true,
+        amount: "0.01 USDC",
+        timestamp: new Date().toISOString()
+      });
+
+    } catch (webhookError) {
+      console.error(`   ❌ Webhook error:`, webhookError);
+      
+      // Fallback to mock recommendation if webhook fails
+      const mockRecommendation = `Based on your interest in "${prompt}", here are some recommendations:\n\n1. **Shadow Realm Chronicles** - A dark fantasy manga where a young warrior discovers ancient powers. Perfect for fans of supernatural action!\n\n2. **Neon Samurai** - Cyberpunk meets traditional samurai culture in this unique webtoon. Great character development and stunning art.\n\n3. **The Last Mage** - Epic fantasy series with complex magic systems and political intrigue. Highly rated by our community!\n\nEach series has free chapters to start. Enjoy your reading! ✨`;
+
+      res.json({
+        success: true,
+        recommendation: mockRecommendation,
+        paid: true,
+        amount: "0.01 USDC",
+        timestamp: new Date().toISOString(),
+        note: "Using fallback recommendation (webhook unavailable)"
+      });
+    }
+
+  } catch (error) {
+    console.error("❌ Error:", error);
+    res.status(500).json({ 
+      error: "Failed to generate recommendation",
       message: error.message 
     });
   }

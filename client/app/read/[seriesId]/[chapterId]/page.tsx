@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useCurrentUser, useIsSignedIn, useX402 } from "@coinbase/cdp-hooks";
 import { FaArrowLeft, FaArrowRight, FaHome, FaList, FaHeart, FaComment, FaShare, FaLock, FaWallet } from "react-icons/fa";
 import { MdTheaterComedy } from "react-icons/md";
+import { useBalance } from "@/app/contexts/BalanceContext";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
 
@@ -17,6 +18,7 @@ export default function ReadChapterPage() {
   const { currentUser } = useCurrentUser();
   const { isSignedIn } = useIsSignedIn();
   const { fetchWithPayment } = useX402();
+  const { refreshBalance } = useBalance();
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [liked, setLiked] = useState(false);
@@ -128,6 +130,10 @@ export default function ReadChapterPage() {
         setChapter(data.chapter);
         setIsLocked(false);
         setPaymentRequired(null);
+        
+        // Refresh balance after payment
+        setTimeout(() => refreshBalance(), 2000);
+        setTimeout(() => refreshBalance(), 5000);
       } else {
         throw new Error(data.error || 'Payment failed');
       }

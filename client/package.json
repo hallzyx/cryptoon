@@ -16,6 +16,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "x402-fetch": "^0.7.3"
   },
   "devDependencies": {

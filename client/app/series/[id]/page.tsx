@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import { FaStar, FaEye, FaHeart, FaLock, FaPlay, FaGithub, FaTwitter, FaUser, FaCog, FaSignOutAlt, FaWallet, FaChevronDown } from "react-icons/fa";
 import { IoSparkles } from "react-icons/io5";
 import { MdTheaterComedy } from "react-icons/md";
+import { useBalance } from "@/app/contexts/BalanceContext";
 
 
 
@@ -17,11 +18,10 @@ export default function SeriesDetailPage() {
   const { isSignedIn } = useIsSignedIn();
   const { signOut } = useSignOut();
   const address = currentUser?.evmAccounts?.[0];
+  const { balance, loading: loadingBalance, refreshBalance } = useBalance();
   const [sortOrder, setSortOrder] = useState<"latest" | "oldest">("latest");
   const [series, setSeries] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [balance, setBalance] = useState<string>("0");
-  const [loadingBalance, setLoadingBalance] = useState(false);
   const [requestingFaucet, setRequestingFaucet] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [purchasedChapters, setPurchasedChapters] = useState<Set<string>>(new Set());
@@ -41,10 +41,9 @@ export default function SeriesDetailPage() {
       });
   }, [id]);
 
-  // Fetch balance and purchases when address changes
+  // Fetch purchases when address changes
   useEffect(() => {
     if (address) {
-      fetchBalance();
       fetchPurchases();
     }
   }, [address, id]);
@@ -61,25 +60,6 @@ export default function SeriesDetailPage() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const fetchBalance = async () => {
-    if (!address) return;
-    
-    setLoadingBalance(true);
-    try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
-      const response = await fetch(`${apiUrl}/api/balance/${address}`);
-      const data = await response.json();
-      
-      if (data.success) {
-        setBalance(data.balance);
-      }
-    } catch (error) {
-      console.error('Error fetching balance:', error);
-    } finally {
-      setLoadingBalance(false);
-    }
-  };
-
   const fetchPurchases = async () => {
     if (!address) return;
     
@@ -90,7 +70,7 @@ export default function SeriesDetailPage() {
       
       if (data.success) {
         // Create a Set of "seriesId_chapterId" keys for quick lookup
-        const purchased = new Set(
+        const purchased = new Set<string>(
           data.purchases
             .filter((p: any) => p.seriesId === id)
             .map((p: any) => `${p.seriesId}_${p.chapterId}`)
@@ -121,9 +101,8 @@ export default function SeriesDetailPage() {
       
       if (data.success) {
         alert(`Success! You received ${data.amount} ${data.token}\n\nTransaction: ${data.transactionHash}\n\nBalance will update in a few seconds.`);
-        setTimeout(() => {
-          fetchBalance();
-        }, 3000);
+        setTimeout(() => refreshBalance(), 2000);
+        setTimeout(() => refreshBalance(), 5000);
       } else {
         alert(`Error: ${data.message || 'Failed to request faucet'}`);
       }
