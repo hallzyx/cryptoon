@@ -1,12 +1,12 @@
-# Cryptoon ������
+# Cryptoon 
 
-**Zero-commission Web3 marketplace for manga/webtoon creators with autonomous payments powered by Coinbase AgentKit**
+**Web3 manga/webtoon reader with zero-commission payments for creators, powered by Coinbase AgentKit**
 
 ![Cryptoon Demo](https://img.shields.io/badge/Status-Hackathon%20Ready-green) ![CDP](https://img.shields.io/badge/Coinbase-CDP-blue) ![Base](https://img.shields.io/badge/Network-Base%20Sepolia-lightblue)
 
 ---
 
-## ��� Problem Statement
+## Problem Statement
 
 Traditional webtoon/manga platforms take **30-50% commission** from creators. Small creators struggle with:
 - High platform fees eating into revenue
@@ -14,78 +14,68 @@ Traditional webtoon/manga platforms take **30-50% commission** from creators. Sm
 - Delayed payments (30-90 days)
 - Geographic payment restrictions
 
-## ��� Our Solution
+## Our Solution
 
-Cryptoon is a **decentralized marketplace** that puts creators first:
+Cryptoon is a **Web3 manga/webtoon reader** designed for the community and creators:
 
-✅ **Zero commission** - Creators keep 100% of revenue  
-✅ **Instant settlement** - Payments arrive in seconds, not months  
-✅ **Global access** - No geographic restrictions with USDC  
-✅ **Autonomous payments** - AgentKit auto-purchases favorite chapters  
-✅ **Transparent** - All transactions verifiable on-chain  
+- **Free to read** - First chapters are completely free for everyone  
+- **Support your favorite artists** - Latest chapter requires payment (0.01 USDC)  
+- **Zero commission** - Creators keep 100% of revenue  
+- **Instant settlement** - Payments arrive in seconds, not months  
+- **Global access** - No geographic restrictions with USDC  
+- **Autonomous payments** - AgentKit auto-purchases new chapters  
+- **Transparent** - All transactions verifiable on-chain  
 
----
-
-## ���️ Architecture
-
-\`\`\`
-┌─────────────┐
-│   Reader    │
-│  (Client)   │
-└──────┬──────┘
-       │ CDP Embedded Wallet (Login)
-       │
-       ├─────────────────────────────────────┐
-       │                                     │
-       v                                     v
-┌──────────────┐                    ┌──────────────┐
-│  x402 Payment│                    │  AgentKit    │
-│   (Manual)   │                    │  (Automated) │
-└──────┬───────┘                    └──────┬───────┘
-       │                                    │
-       │  402 Payment Required              │  Auto-purchase
-       │  USDC Transfer                     │  Scheduled checks
-       │                                    │  
-       v                                    v
-┌──────────────────────────────────────────────────┐
-│            Node.js Backend Server                │
-│  ┌────────────────────────────────────────────┐  │
-│  │  x402 Facilitator  │  CDP Faucet API      │  │
-│  │  Token Balances    │  Agent Wallet        │  │
-│  └────────────────────────────────────────────┘  │
-└───────────────────────┬──────────────────────────┘
-                        │
-                        v
-              ┌──────────────────┐
-              │   Base Sepolia   │
-              │   (Blockchain)   │
-              └──────────────────┘
-                        │
-                        v
-              ┌──────────────────┐
-              │  Creator Wallet  │
-              │  (100% revenue)  │
-              └──────────────────┘
-\`\`\`
+**Not a marketplace** - We're a reader platform focused on supporting artists without privatizing content. Read for free, pay to support!  
 
 ---
 
-## ��� Coinbase Developer Platform Products Used
+## Architecture
+
+```mermaid
+graph TD
+    Reader[Reader<br/>Client]
+    
+    Reader -->|CDP Embedded Wallet<br/>Login| Auth{Authentication}
+    
+    Auth -->|Manual Payment| Manual[x402 Payment<br/>Manual]
+    Auth -->|Automated| Agent[AgentKit<br/>Automated]
+    
+    Manual -->|402 Payment Required<br/>USDC Transfer| Backend
+    Agent -->|Auto-purchase<br/>Scheduled checks| Backend
+    
+    Backend[Node.js Backend Server<br/>────────────────<br/>x402 Facilitator<br/>CDP Faucet API<br/>Token Balances<br/>Agent Wallet]
+    
+    Backend -->|Transaction| Blockchain[Base Sepolia<br/>Blockchain]
+    
+    Blockchain -->|Payment| Creator[Creator Wallet<br/>100% Revenue]
+    
+    style Reader fill:#e1f5ff
+    style Manual fill:#fff4e6
+    style Agent fill:#f3e5f5
+    style Backend fill:#e8f5e9
+    style Blockchain fill:#fce4ec
+    style Creator fill:#fff9c4
+```
+
+---
+
+## Coinbase Developer Platform Products Used
 
 ### Client-Side
-- **��� CDP Embedded Wallet** - Web2-friendly auth (no seed phrases, no extensions)
-- **��� x402 Protocol** - Seamless micropayments for content access
+- **CDP Embedded Wallet** - Web2-friendly auth (no seed phrases, no extensions)
+- **x402 Protocol** - Seamless micropayments for content access
 
 ### Server-Side
-- **��� AgentKit (CDP SDK v2)** - Autonomous agent for auto-purchasing chapters
-- **��� CDP x402 Facilitator** - Payment verification and settlement
-- **��� CDP Faucet API** - One-click testnet USDC distribution
-- **��� CDP Token Balances API** - Real-time wallet balance tracking
-- **⚡ CDP Wallet Management** - Programmatic wallet creation and transactions
+- **AgentKit (CDP SDK v2)** - Autonomous agent for auto-purchasing chapters
+- **CDP x402 Facilitator** - Payment verification and settlement
+- **CDP Faucet API** - One-click testnet USDC distribution
+- **CDP Token Balances API** - Real-time wallet balance tracking
+- **CDP Wallet Management** - Programmatic wallet creation and transactions
 
 ---
 
-## ✨ Features
+## Features
 
 ### ✅ Implemented & Functional
 
@@ -99,20 +89,46 @@ Cryptoon is a **decentralized marketplace** that puts creators first:
 - HTTP 402 "Payment Required" protocol
 - Instant access after payment
 
-#### 3. AgentKit Auto-Purchase ��
+#### 3. AgentKit Auto-Purchase 
 - Autonomous agent monitoring favorites
 - Auto-purchase new premium chapters
 - Monthly spending limits
 
-### ��� Mockup/Simulated
+#### 4. AI Recommendations
+- n8n workflow integration with OpenAI
+- Personalized manga/webtoon suggestions
+- Webhook-triggered recommendations
 
-- AI Recommendations (Future: n8n + OpenAI)
-- Rankings/Leaderboard (Future: On-chain analytics)
+![n8n Workflow](./assets/img/n8n-workflow.png)
+*AI recommendation system powered by n8n + OpenAI*
+
+![n8n Webhook Details](./assets/img/n8n-webhook-trigger-details.png)
+*Webhook configuration for real-time recommendations*
+
+#### 5. AI Chat Assistant (x402-Powered)
+- Pay-per-query AI chat with manga characters
+- x402 payment for external n8n webhook API calls
+- Demonstrates x402 versatility:
+  - ✅ **Backend APIs** - Chapter access payments
+  - ✅ **External Webhooks** - n8n AI chat payments
+  - ✅ **AgentKit** - Autonomous chapter purchases
+
+**Why This Matters:**  
+This feature showcases the **full versatility of x402 protocol** by implementing three distinct payment scenarios in one platform:
+
+1. **Traditional Backend** - Direct server-to-server payments for content
+2. **External Services** - Pay for third-party webhook/API calls (n8n)
+3. **Autonomous Agents** - AgentKit handles payments automatically
+
+**Use Case:** Readers can chat with their favorite manga characters (e.g., "Ask Chronos about time travel") for 0.01 USDC per message. Payment flows through x402 to cover the n8n + OpenAI API costs.
+
+### Mockup/Simulated
+
 - Creator Dashboard (Future: Full analytics)
 
 ---
 
-## ��� Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -158,13 +174,13 @@ npm run dev:client  # http://localhost:3000
 
 ---
 
-## ��� Demo
+## Demo
 
 See [DEMO.md](./DEMO.md) for complete 4-minute demo script
 
 ---
 
-## ��� Implementation Status
+## Implementation Status
 
 | Feature | Status |
 |---------|--------|
@@ -172,12 +188,36 @@ See [DEMO.md](./DEMO.md) for complete 4-minute demo script
 | x402 Payments | ✅ Functional |
 | AgentKit Auto-Purchase | ✅ Functional |
 | Faucet System | ✅ Functional |
-| AI Recommendations | ❌ Mock |
-| Rankings | ❌ Mock |
+| AI Recommendations (n8n + OpenAI) | ✅ Functional |
+| AI Chat Assistant (x402 + n8n) | ✅ Functional |
+| Creator Dashboard | ❌ Mock |
 
 ---
 
-## ��� Important Links
+## x402 Protocol Versatility
+
+Cryptoon demonstrates **three distinct use cases** for x402 micropayments:
+
+### 1. Backend Content Access
+- **Use Case:** Pay to unlock latest manga chapters
+- **Flow:** User → x402 → Backend API → Content
+- **Price:** 0.01 USDC per chapter
+
+### 2. External Webhook Services  
+- **Use Case:** AI Chat with manga characters (n8n + OpenAI)
+- **Flow:** User → x402 → n8n Webhook → OpenAI → Response
+- **Price:** 0.01 USDC per message
+- **Why x402?** Covers external API costs (n8n hosting + OpenAI tokens)
+
+### 3. Autonomous Agent Payments
+- **Use Case:** AgentKit auto-purchases new chapters
+- **Flow:** Agent → x402 → Backend → Chapter unlocked
+- **Price:** 0.01 USDC per auto-purchase
+- **Why x402?** Agent can execute payments without user approval
+
+---
+
+## Important Links
 
 - **USDC Contract**: 0x036CbD53842c5426634e7929541eC2318f3dCF7e
 - **Network**: Base Sepolia (Chain ID: 84532)
@@ -185,7 +225,7 @@ See [DEMO.md](./DEMO.md) for complete 4-minute demo script
 
 ---
 
-## ��� Roadmap
+## Roadmap
 
 ### Phase 1: Hackathon MVP ✅
 - [x] CDP Wallet + x402 + AgentKit
@@ -202,7 +242,7 @@ See [DEMO.md](./DEMO.md) for complete 4-minute demo script
 
 ---
 
-## ��� License
+## License
 
 MIT License
 

@@ -2,7 +2,11 @@
 
 ## System Overview
 
-Cryptoon is a decentralized manga/webtoon marketplace built on Base Sepolia using Coinbase Developer Platform.
+Cryptoon is a Web3 manga/webtoon reader built on Base Sepolia using Coinbase Developer Platform. It's designed as a freemium reader where:
+- **All chapters except the latest are free** for everyone
+- **Latest chapter requires payment** (0.01 USDC) to support creators
+- **100% of payments go directly to creators** (zero commission)
+- **Community-focused** - Not a closed marketplace, but an open reader platform
 
 ---
 
@@ -66,28 +70,27 @@ server/
 
 ### 1. Manual x402 Payment
 
-```
-User → Frontend
-  ↓
-  Clicks "Read Premium Chapter"
-  ↓
-Frontend → Backend (GET /api/chapters/:seriesId/:chapterId)
-  ↓
-Backend checks if purchased
-  ↓
-  NOT PURCHASED → Returns HTTP 402 "Payment Required"
-  ↓
-Frontend shows payment modal
-  ↓
-User clicks "Pay 0.01 USDC"
-  ↓
-Frontend → CDP x402 facilitator
-  ↓
-CDP facilitator verifies & settles payment
-  ↓
-Backend confirms payment
-  ↓
-Frontend unlocks chapter ✅
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant CDP as CDP x402 Facilitator
+    participant Blockchain as Base Sepolia
+    
+    User->>Frontend: Click "Read Latest Chapter"
+    Frontend->>Backend: GET /api/chapters/:seriesId/:chapterId
+    Backend->>Backend: Check if purchased
+    Backend-->>Frontend: 402 Payment Required<br/>(0.01 USDC)
+    Frontend->>User: Show payment modal
+    User->>Frontend: Click "Pay 0.01 USDC"
+    Frontend->>CDP: Initiate x402 payment
+    CDP->>Blockchain: Settle USDC transfer
+    Blockchain-->>CDP: Transaction confirmed
+    CDP-->>Backend: Payment verified
+    Backend->>Backend: Record purchase
+    Backend-->>Frontend: Chapter unlocked ✅
+    Frontend->>User: Display chapter content
 ```
 
 **Technical Implementation:**
@@ -113,28 +116,38 @@ app.get("/api/chapters/:seriesId/:chapterId", (req, res) => {
 
 ### 2. AgentKit Autonomous Payment
 
-```
-AgentService (every 60 seconds)
-  ↓
-Checks enabled users from agentSettings.json
-  ↓
-For each user:
-  ↓
-  Gets favorites from favorites.json
-  ↓
-  Finds unpurchased premium chapters
-  ↓
-  Validates:
-    - Monthly spending limit
-    - Agent wallet has sufficient USDC + ETH
-  ↓
-  Executes transfer via CDP SDK v2:
-    - Encodes ERC-20 transfer(address, uint256)
-    - Calls cdpClient.evm.sendTransaction()
-  ↓
-  Records purchase in agentHistory.json
-  ↓
-  Logs transaction hash & Basescan link ✅
+```mermaid
+flowchart TD
+    Start([AgentService<br/>Every 60 seconds]) --> CheckEnabled{Check enabled users<br/>agentSettings.json}
+    
+    CheckEnabled -->|For each user| GetFavorites[Get favorites<br/>favorites.json]
+    
+    GetFavorites --> FindChapters[Find unpurchased<br/>latest chapters]
+    
+    FindChapters --> Validate{Validate}
+    
+    Validate -->|Check 1| Limit{Monthly spending<br/>limit OK?}
+    Limit -->|No| Skip[Skip purchase]
+    Limit -->|Yes| Balance{Agent wallet<br/>has USDC + ETH?}
+    
+    Balance -->|No| Skip
+    Balance -->|Yes| Encode[Encode ERC-20<br/>transfer function]
+    
+    Encode --> SendTx[CDP SDK v2<br/>sendTransaction]
+    
+    SendTx --> Blockchain[Base Sepolia<br/>Blockchain]
+    
+    Blockchain --> Record[Record purchase<br/>agentHistory.json]
+    
+    Record --> Log[Log tx hash &<br/>Basescan link ✅]
+    
+    Log --> CheckEnabled
+    Skip --> CheckEnabled
+    
+    style Start fill:#e1f5ff
+    style Blockchain fill:#fce4ec
+    style Log fill:#c8e6c9
+    style Skip fill:#ffecb3
 ```
 
 **Technical Implementation:**
@@ -204,17 +217,75 @@ import { CdpProvider } from '@coinbase/cdp-hooks';
 
 **Purpose:** Verifies payments and settles transactions on-chain.
 
+**x402 Use Cases in Cryptoon:**
+
+Cryptoon demonstrates the **full versatility of x402 protocol** through three distinct payment scenarios:
+
+#### Use Case 1: Backend Content Access (Traditional)
+```javascript
+// Pay for latest manga chapter
+app.get("/api/chapters/:seriesId/:chapterId", (req, res) => {
+  if (!hasPurchased(address, chapterId)) {
+    return res.status(402).json({
+      error: "Payment Required",
+      price: "0.01 USDC",
+      receiver: process.env.RECEIVER_WALLET
+    });
+  }
+  res.json({ content, images });
+});
+```
+
+#### Use Case 2: External Webhook Services (n8n)
+```javascript
+// Pay for AI chat with manga characters
+app.post("/api/chat/:characterId", async (req, res) => {
+  if (!hasPaidForChat(address, message)) {
+    return res.status(402).json({
+      error: "Payment Required",
+      price: "0.01 USDC",
+      receiver: process.env.RECEIVER_WALLET,
+      service: "AI Chat"
+    });
+  }
+  
+  // Forward to n8n webhook after payment
+  const aiResponse = await fetch("https://n8n-instance.com/webhook/chat", {
+    method: "POST",
+    body: JSON.stringify({ characterId, message })
+  });
+  
+  res.json(await aiResponse.json());
+});
+```
+
+#### Use Case 3: Autonomous Agent Payments (AgentKit)
+```javascript
+// AgentKit auto-purchases chapters without user approval
+async function agentPurchaseChapter(seriesId, chapterId) {
+  // Agent makes x402 payment automatically
+  const txHash = await transferUSDC(
+    process.env.RECEIVER_WALLET,
+    "0.01"
+  );
+  
+  // Record purchase
+  recordAgentPurchase({ seriesId, chapterId, txHash });
+}
+```
+
 **Flow:**
-1. User initiates payment from frontend
+1. User/Agent initiates payment from frontend/backend
 2. CDP facilitator validates signature
 3. Facilitator submits transaction to blockchain
 4. Backend confirms payment via webhook/polling
-5. Content unlocked
+5. Content/service unlocked
 
 **Benefits:**
 - No gas fees for users (CDP pays)
 - Instant verification
 - Automatic retry logic
+- Works for both manual and autonomous payments
 
 ---
 
@@ -290,6 +361,175 @@ const usdcBalance = data.balances.find(
   b => b.contractAddress === "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
 );
 ```
+
+---
+
+### 6. AI Recommendations (n8n + OpenAI)
+
+**Purpose:** Provide personalized manga/webtoon recommendations based on user preferences.
+
+**Architecture:**
+
+```mermaid
+flowchart LR
+    User[User Request] --> Webhook[n8n Webhook]
+    Webhook --> OpenAI[OpenAI API]
+    OpenAI --> Process[Process Recommendations]
+    Process --> Response[JSON Response]
+    Response --> Frontend[Display to User]
+    
+    style User fill:#e1f5ff
+    style Webhook fill:#fff4e6
+    style OpenAI fill:#f3e5f5
+    style Response fill:#e8f5e9
+```
+
+**Implementation:**
+
+![n8n Workflow](./assets/img/n8n-workflow.png)
+*Complete n8n workflow for AI-powered recommendations*
+
+![n8n Webhook Configuration](./assets/img/n8n-webhook-trigger-details.png)
+*Webhook trigger details for real-time recommendations*
+
+**Features:**
+- Real-time recommendations via webhook
+- OpenAI integration for intelligent suggestions
+- Personalized based on reading history
+- Genre-based filtering
+- Popularity scoring
+
+**Endpoint:**
+```javascript
+// n8n webhook endpoint
+POST https://your-n8n-instance.com/webhook/recommendations
+
+// Request body
+{
+  "userId": "0xUserAddress",
+  "preferences": ["action", "sci-fi"],
+  "readHistory": [1, 3, 5]
+}
+
+// Response
+{
+  "recommendations": [
+    {
+      "seriesId": 2,
+      "title": "Mecha Heart",
+      "genre": "sci-fi",
+      "score": 0.95,
+      "reason": "Based on your love for sci-fi and action"
+    }
+  ]
+}
+```
+
+**Status:** ✅ Functional (n8n workflow deployed)
+
+---
+
+### 7. AI Chat Assistant (x402 + n8n)
+
+**Purpose:** Demonstrate x402 versatility by implementing pay-per-query AI chat with manga characters via external n8n webhook.
+
+**Why This Feature Matters:**
+
+This showcases **three distinct x402 use cases in one platform**:
+
+1. **Backend Content Access** - Traditional server API payments (chapters)
+2. **External Webhook Services** - Pay for third-party n8n + OpenAI calls (chat)
+3. **Autonomous Agents** - AgentKit automated payments (auto-purchase)
+
+**Architecture:**
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant x402 as x402 Facilitator
+    participant n8n as n8n Webhook
+    participant OpenAI
+    
+    User->>Frontend: "Ask character a question"
+    Frontend->>Backend: POST /api/chat (requires payment)
+    Backend-->>Frontend: 402 Payment Required<br/>(0.01 USDC)
+    Frontend->>User: Show payment modal
+    User->>x402: Pay 0.01 USDC
+    x402->>Backend: Payment verified ✅
+    Backend->>n8n: Forward chat request
+    n8n->>OpenAI: Generate character response
+    OpenAI-->>n8n: AI response
+    n8n-->>Backend: Character message
+    Backend-->>Frontend: Display chat response
+    Frontend->>User: Show AI character reply
+    
+    style User fill:#e1f5ff
+    style x402 fill:#fff4e6
+    style n8n fill:#f3e5f5
+    style OpenAI fill:#e8f5e9
+```
+
+**Implementation Details:**
+
+**Pricing Model:**
+- **Chapter Access:** 0.01 USDC (backend content)
+- **AI Chat:** 0.01 USDC per message (external webhook)
+- **Auto-Purchase:** 0.01 USDC (AgentKit autonomous)
+
+**Backend Endpoint:**
+```javascript
+// server/index.js
+app.post("/api/chat/:characterId", async (req, res) => {
+  const { address, characterId } = req.params;
+  const { message } = req.body;
+  
+  // x402 payment check
+  if (!hasPaidForChat(address, message)) {
+    return res.status(402).json({
+      error: "Payment Required",
+      price: "0.01 USDC",
+      receiver: process.env.RECEIVER_WALLET,
+      service: "AI Chat with Character"
+    });
+  }
+  
+  // Forward to n8n webhook
+  const response = await fetch("https://n8n-instance.com/webhook/character-chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      characterId,
+      userMessage: message,
+      context: getCharacterContext(characterId)
+    })
+  });
+  
+  const aiResponse = await response.json();
+  res.json({ message: aiResponse.reply });
+});
+```
+
+**n8n Webhook Flow:**
+1. Receive character ID + user message
+2. Load character personality prompt
+3. Call OpenAI API with context
+4. Return character-appropriate response
+5. Track usage for cost analysis
+
+**Use Cases:**
+- "Ask Chronos about time travel paradoxes"
+- "Get writing tips from the creator persona"
+- "Chat with villain about their motivations"
+
+**Revenue Model:**
+- 0.01 USDC covers:
+  - n8n hosting costs (~$0.002)
+  - OpenAI API call (~$0.006)
+  - Platform fee (~$0.002)
+
+**Status:** ✅ Functional (x402 + n8n integration deployed)
 
 ---
 
@@ -470,7 +710,7 @@ The agent wallet needs:
 ## Future Enhancements
 
 ### Phase 2
-- [ ] AI recommendations (n8n + OpenAI)
+- [x] AI recommendations (n8n + OpenAI) - ✅ Completed
 - [ ] Multi-creator routing
 - [ ] Creator analytics dashboard
 - [ ] IPFS integration for images
