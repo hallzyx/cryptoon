@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
 import { BalanceProvider } from "./contexts/BalanceContext";
+import { FavoritesProvider } from "./contexts/FavoritesContext";
 import AIRecommendationChat from "./components/AIRecommendationChat";
 
 export const metadata: Metadata = {
@@ -20,8 +21,10 @@ export default function RootLayout({
       <body className="font-sans">
         <Providers>
           <BalanceProvider>
-            {children}
-            <AIRecommendationChat />
+            <FavoritesProvider>
+              {children}
+              <AIRecommendationChat />
+            </FavoritesProvider>
           </BalanceProvider>
         </Providers>
       </body>

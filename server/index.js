@@ -6,6 +6,7 @@ import { facilitator } from "@coinbase/x402";
 import { requestFaucet } from "./faucet.js";
 import { getTokenBalances } from "./balances.js";
 import { getChapterContent, isChapterFree, recordPurchase, hasUserPurchased, getAllPurchases } from "./chapters.js";
+import { getUserFavorites, isFavorited, addFavorite, removeFavorite, getAllFavorites } from "./favorites.js";
 
 dotenv.config();
 
@@ -376,6 +377,87 @@ app.get("/api/balance/:address", async (req, res) => {
     console.error("Balance error:", error);
     res.status(500).json({ 
       error: "Failed to fetch balance",
+      message: error.message 
+    });
+  }
+});
+
+// Get user's favorites
+app.get("/api/favorites/:address", (req, res) => {
+  try {
+    const { address } = req.params;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    const favorites = getUserFavorites(address);
+    
+    console.log(`⭐ Favorites for ${address}: ${favorites.length} series`);
+
+    res.json({
+      success: true,
+      favorites,
+      count: favorites.length
+    });
+  } catch (error) {
+    console.error("❌ Error fetching favorites:", error);
+    res.status(500).json({ 
+      error: "Failed to fetch favorites",
+      message: error.message 
+    });
+  }
+});
+
+// Add to favorites
+app.post("/api/favorites", (req, res) => {
+  try {
+    const { address, seriesId, seriesTitle, seriesCover } = req.body;
+    
+    if (!address || !seriesId) {
+      return res.status(400).json({ 
+        error: "Address and seriesId are required" 
+      });
+    }
+
+    const result = addFavorite(address, seriesId, seriesTitle, seriesCover);
+    
+    if (!result.success) {
+      return res.status(400).json(result);
+    }
+
+    res.json(result);
+  } catch (error) {
+    console.error("❌ Error adding favorite:", error);
+    res.status(500).json({ 
+      error: "Failed to add favorite",
+      message: error.message 
+    });
+  }
+});
+
+// Remove from favorites
+app.delete("/api/favorites/:address/:seriesId", (req, res) => {
+  try {
+    const { address, seriesId } = req.params;
+    
+    if (!address || !seriesId) {
+      return res.status(400).json({ 
+        error: "Address and seriesId are required" 
+      });
+    }
+
+    const result = removeFavorite(address, seriesId);
+    
+    if (!result.success) {
+      return res.status(404).json(result);
+    }
+
+    res.json(result);
+  } catch (error) {
+    console.error("❌ Error removing favorite:", error);
+    res.status(500).json({ 
+      error: "Failed to remove favorite",
       message: error.message 
     });
   }

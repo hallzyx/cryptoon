@@ -8,6 +8,7 @@ import { FaStar, FaEye, FaHeart, FaLock, FaPlay, FaGithub, FaTwitter, FaUser, Fa
 import { IoSparkles } from "react-icons/io5";
 import { MdTheaterComedy } from "react-icons/md";
 import { useBalance } from "@/app/contexts/BalanceContext";
+import { useFavorites } from "@/app/contexts/FavoritesContext";
 
 
 
@@ -19,6 +20,7 @@ export default function SeriesDetailPage() {
   const { signOut } = useSignOut();
   const address = currentUser?.evmAccounts?.[0];
   const { balance, loading: loadingBalance, refreshBalance } = useBalance();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [sortOrder, setSortOrder] = useState<"latest" | "oldest">("latest");
   const [series, setSeries] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -232,6 +234,19 @@ export default function SeriesDetailPage() {
                             </div>
                           </button>
 
+                          {/* Favorites */}
+                          <Link
+                            href="/favorites"
+                            onClick={() => setShowProfileMenu(false)}
+                            className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-purple-900/30 transition-colors text-left"
+                          >
+                            <FaHeart className="text-pink-400" />
+                            <div>
+                              <div className="text-sm text-white">My Favorites</div>
+                              <div className="text-xs text-gray-400">View saved series</div>
+                            </div>
+                          </Link>
+
                           {/* Configuration */}
                           <button
                             onClick={() => {
@@ -311,9 +326,17 @@ export default function SeriesDetailPage() {
                   <h1 className="text-3xl md:text-4xl font-bold mb-2">{series.title}</h1>
                   <p className="text-gray-400">by {series.author}</p>
                 </div>
-                <button className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition-colors flex items-center gap-2">
-                  <FaHeart />
-                  <span>Subscribe</span>
+                <button 
+                  onClick={() => toggleFavorite(id, series.title, series.thumbnail)}
+                  disabled={!address}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2 ${
+                    isFavorite(id)
+                      ? 'bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 shadow-lg shadow-pink-500/30'
+                      : 'bg-purple-600 hover:bg-purple-700'
+                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  <FaHeart className={isFavorite(id) ? 'animate-pulse' : ''} />
+                  <span>{isFavorite(id) ? 'Favorited' : 'Add to Favorites'}</span>
                 </button>
               </div>
 

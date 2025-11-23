@@ -1,0 +1,25 @@
+{
+  "favorites": [
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "seriesTitle": "Chronos Paradox",
+      "seriesCover": "https://i.imgur.com/XZw68bP.jpeg",
+      "timestamp": "2025-11-23T03:07:40.504Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "4",
+      "seriesTitle": "Mecha Heart",
+      "seriesCover": "https://i.imgur.com/AL9ucRg.jpeg",
+      "timestamp": "2025-11-23T03:23:04.680Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "6",
+      "seriesTitle": "Void Walker",
+      "seriesCover": "https://i.imgur.com/K4rJpK3.jpeg",
+      "timestamp": "2025-11-23T03:47:01.926Z"
+    }
+  ]
+}

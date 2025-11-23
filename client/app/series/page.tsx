@@ -237,6 +237,19 @@ export default function SeriesPage() {
                             </div>
                           </button>
 
+                          {/* My Favorites */}
+                          <Link
+                            href="/favorites"
+                            onClick={() => setShowProfileMenu(false)}
+                            className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-purple-900/30 transition-colors text-left"
+                          >
+                            <FaHeart className="text-pink-400" />
+                            <div>
+                              <div className="text-sm text-white">My Favorites</div>
+                              <div className="text-xs text-gray-400">View saved series</div>
+                            </div>
+                          </Link>
+
                           {/* Configuration */}
                           <button
                             onClick={() => {
