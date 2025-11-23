@@ -145,3 +145,23 @@ export function isChapterFree(seriesId, chapterId) {
 export function getAllPurchases() {
   return loadPurchases();
 }
+
+/**
+ * Reset all purchases for a specific user (for testing)
+ * @param {string} address - User's wallet address
+ * @returns {number} Number of purchases deleted
+ */
+export function resetUserPurchases(address) {
+  const purchases = loadPurchases();
+  const initialCount = purchases.length;
+  
+  const filteredPurchases = purchases.filter(
+    p => p.address.toLowerCase() !== address.toLowerCase()
+  );
+  
+  savePurchases(filteredPurchases);
+  const deletedCount = initialCount - filteredPurchases.length;
+  
+  console.log(`🔄 Reset purchases for ${address}: ${deletedCount} purchase(s) deleted`);
+  return deletedCount;
+}

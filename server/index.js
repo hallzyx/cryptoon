@@ -7,6 +7,10 @@ import { requestFaucet } from "./faucet.js";
 import { getTokenBalances } from "./balances.js";
 import { getChapterContent, isChapterFree, recordPurchase, hasUserPurchased, getAllPurchases } from "./chapters.js";
 import { getUserFavorites, isFavorited, addFavorite, removeFavorite, getAllFavorites } from "./favorites.js";
+import { getUserSettings, updateUserSettings, getUserHistory, getMonthlySpending, resetUserHistory } from "./agentSettings.js";
+import { startAgentService } from "./agentService.js";
+import { initializeAgentWallet, getAgentWalletAddress, getAgentBalance } from "./agentWallet.js";
+import { resetUserPurchases } from "./chapters.js";
 
 dotenv.config();
 
@@ -463,6 +467,240 @@ app.delete("/api/favorites/:address/:seriesId", (req, res) => {
   }
 });
 
+// Get agent settings for user
+app.get("/api/agent/settings/:address", (req, res) => {
+  try {
+    const { address } = req.params;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    const settings = getUserSettings(address);
+    
+    // Return default settings if none exist
+    const result = settings || {
+      address: address.toLowerCase(),
+      enabled: false,
+      monthlyLimit: 1.0
+    };
+
+    res.json({
+      success: true,
+      settings: result
+    });
+  } catch (error) {
+    console.error("❌ Error fetching agent settings:", error);
+    res.status(500).json({ 
+      error: "Failed to fetch agent settings",
+      message: error.message 
+    });
+  }
+});
+
+// Update agent settings for user
+app.post("/api/agent/settings", (req, res) => {
+  try {
+    const { address, enabled, monthlyLimit } = req.body;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    const result = updateUserSettings(address, { enabled, monthlyLimit });
+    
+    res.json(result);
+  } catch (error) {
+    console.error("❌ Error updating agent settings:", error);
+    res.status(500).json({ 
+      error: "Failed to update agent settings",
+      message: error.message 
+    });
+  }
+});
+
+// Get agent purchase history for user
+app.get("/api/agent/history/:address", (req, res) => {
+  try {
+    const { address } = req.params;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    const history = getUserHistory(address);
+    const monthlySpent = getMonthlySpending(address);
+
+    res.json({
+      success: true,
+      history,
+      monthlySpent,
+      count: history.length
+    });
+  } catch (error) {
+    console.error("❌ Error fetching agent history:", error);
+    res.status(500).json({ 
+      error: "Failed to fetch agent history",
+      message: error.message 
+    });
+  }
+});
+
+// Reset all purchases and history for a user (for testing)
+app.delete("/api/reset/:address", (req, res) => {
+  try {
+    const { address } = req.params;
+    
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    // Reset both manual purchases (x402) and agent purchases
+    const purchasesDeleted = resetUserPurchases(address);
+    const historyDeleted = resetUserHistory(address);
+
+    console.log(`🔄 RESET completed for ${address}:`);
+    console.log(`   - ${purchasesDeleted} manual purchase(s) deleted`);
+    console.log(`   - ${historyDeleted} agent history record(s) deleted`);
+
+    res.json({
+      success: true,
+      message: "All purchases and history reset successfully",
+      deleted: {
+        purchases: purchasesDeleted,
+        history: historyDeleted,
+        total: purchasesDeleted + historyDeleted
+      }
+    });
+  } catch (error) {
+    console.error("❌ Error resetting user data:", error);
+    res.status(500).json({ 
+      error: "Failed to reset user data",
+      message: error.message 
+    });
+  }
+});
+
+// Get agent wallet info and fund it via faucet
+app.post("/api/agent/fund", async (req, res) => {
+  try {
+    const agentAddress = getAgentWalletAddress();
+    
+    if (!agentAddress) {
+      return res.status(400).json({ 
+        error: "Agent wallet not initialized",
+        message: "Please restart the server to initialize the agent wallet"
+      });
+    }
+
+    console.log(`💰 Requesting faucet funds for agent wallet: ${agentAddress}`);
+    
+    // Use the same faucet endpoint to fund the agent
+    const apiKeyId = process.env.CDP_API_KEY_ID;
+    const apiKeySecret = process.env.CDP_API_KEY_SECRET;
+    
+    if (!apiKeyId || !apiKeySecret) {
+      return res.status(500).json({
+        error: "CDP API credentials not configured",
+        message: "Please set CDP_API_KEY_ID and CDP_API_KEY_SECRET in .env"
+      });
+    }
+    
+    const result = await requestFaucet(agentAddress, apiKeyId, apiKeySecret);
+    
+    // Wait a bit for the transaction to be processed
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    
+    // Get updated balance
+    const newBalance = await getAgentBalance();
+    
+    console.log(`✅ Agent wallet funded! New balance: ${newBalance} USDC`);
+
+    res.json({
+      success: true,
+      message: "Agent wallet funded successfully",
+      agentAddress,
+      balance: newBalance,
+      faucetResult: result
+    });
+  } catch (error) {
+    console.error("❌ Error funding agent wallet:", error);
+    res.status(500).json({ 
+      error: "Failed to fund agent wallet",
+      message: error.message 
+    });
+  }
+});
+
+// Fund agent wallet with ETH (for gas fees)
+app.post("/api/agent/fund-eth", async (req, res) => {
+  try {
+    const agentAddress = getAgentWalletAddress();
+    
+    if (!agentAddress) {
+      return res.status(400).json({ 
+        error: "Agent wallet not initialized",
+        message: "Please restart the server to initialize the agent wallet"
+      });
+    }
+
+    console.log(`⛽ Requesting ETH faucet for agent wallet: ${agentAddress}`);
+    
+    const apiKeyId = process.env.CDP_API_KEY_ID;
+    const apiKeySecret = process.env.CDP_API_KEY_SECRET;
+    
+    if (!apiKeyId || !apiKeySecret) {
+      return res.status(500).json({
+        error: "CDP API credentials not configured",
+        message: "Please set CDP_API_KEY_ID and CDP_API_KEY_SECRET in .env"
+      });
+    }
+    
+    // Import the ETH faucet function
+    const { requestEthFaucet } = await import('./faucet.js');
+    const result = await requestEthFaucet(agentAddress, apiKeyId, apiKeySecret);
+    
+    // Wait a bit for the transaction to be processed
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    
+    console.log(`✅ Agent wallet funded with ETH for gas!`);
+
+    res.json({
+      success: true,
+      message: "Agent wallet funded with ETH successfully",
+      agentAddress,
+      faucetResult: result
+    });
+  } catch (error) {
+    console.error("❌ Error funding agent wallet with ETH:", error);
+    res.status(500).json({ 
+      error: "Failed to fund agent wallet with ETH",
+      message: error.message 
+    });
+  }
+});
+
+// Get agent wallet info (address and balance)
+app.get("/api/agent/wallet", async (req, res) => {
+  try {
+    const agentAddress = getAgentWalletAddress();
+    const agentBalance = await getAgentBalance();
+
+    res.json({
+      success: true,
+      address: agentAddress,
+      balance: agentBalance,
+      network: "base-sepolia"
+    });
+  } catch (error) {
+    console.error("❌ Error fetching agent wallet info:", error);
+    res.status(500).json({ 
+      error: "Failed to fetch agent wallet info",
+      message: error.message 
+    });
+  }
+});
+
 // Error handling
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -473,7 +711,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`\n🎭 Cryptoon Server v2.0 - x402 Payment System`);
   console.log(`📍 Running on http://localhost:${PORT}`);
   console.log(`\n💳 Payment Configuration:`);
@@ -481,8 +719,26 @@ app.listen(PORT, () => {
   console.log(`   Receiver: ${RECEIVER_WALLET}`);
   console.log(`   Network: Base Sepolia`);
   console.log(`\nEndpoints:`);
-  console.log(`   GET  /api/chapters/:seriesId/:chapterId - Get chapter (x402)`);
-  console.log(`   GET  /api/balance/:address - Get balance`);
-  console.log(`   POST /api/faucet - Request testnet USDC`);
+  console.log(`   GET    /api/chapters/:seriesId/:chapterId - Get chapter (x402)`);
+  console.log(`   GET    /api/balance/:address - Get balance`);
+  console.log(`   POST   /api/faucet - Request testnet USDC`);
+  console.log(`   GET    /api/agent/settings/:address - Get agent settings`);
+  console.log(`   POST   /api/agent/settings - Update agent settings`);
+  console.log(`   GET    /api/agent/history/:address - Get agent history`);
+  console.log(`   GET    /api/agent/wallet - Get agent wallet info`);
+  console.log(`   POST   /api/agent/fund - Fund agent wallet via faucet`);
+  console.log(`   DELETE /api/reset/:address - Reset all purchases (testing)`);
   console.log(`\n✅ Server ready!\n`);
+  
+  // Initialize agent wallet before starting service
+  console.log(`🤖 Initializing agent wallet...`);
+  await initializeAgentWallet();
+  const agentAddress = getAgentWalletAddress();
+  const agentBalance = await getAgentBalance();
+  console.log(`🤖 Agent wallet ready: ${agentAddress}`);
+  console.log(`💰 Agent balance: ${agentBalance} USDC`);
+  console.log(`   ⚠️  Fund this wallet with testnet USDC to enable auto-purchases!\n`);
+  
+  // Start the auto-purchase agent service
+  startAgentService();
 });

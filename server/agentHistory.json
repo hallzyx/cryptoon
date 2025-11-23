@@ -1,0 +1,508 @@
+{
+  "history": [
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:24.700Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:28.205Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:31.711Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:35.401Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:39.067Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:42.628Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:46.014Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:49.598Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:52.986Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:56.432Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:18:59.860Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:19:03.514Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:19:07.583Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:19:10.891Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:21:44.834Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:21:48.449Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:21:52.286Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:21:55.764Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:21:59.534Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:03.097Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:06.867Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:10.773Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:14.179Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:17.632Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:21.350Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:24.981Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:29.200Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:32.808Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:36.310Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:39.843Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:43.330Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:47.053Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:50.805Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:54.889Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:22:58.171Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:23:01.633Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:23:05.017Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:29:46.170Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:29:49.811Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:29:53.416Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:29:57.217Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:00.683Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:04.261Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:07.744Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:36.212Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:39.698Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:43.283Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:46.568Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:50.358Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:54.481Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": false,
+      "error": "Insufficient balance to execute the transaction.",
+      "timestamp": "2025-11-23T05:30:58.940Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "1",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": true,
+      "error": null,
+      "timestamp": "2025-11-23T05:31:03.115Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "4",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": true,
+      "error": null,
+      "timestamp": "2025-11-23T05:31:07.385Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "6",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": true,
+      "error": null,
+      "timestamp": "2025-11-23T05:31:11.686Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "5",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": true,
+      "error": null,
+      "timestamp": "2025-11-23T05:31:15.488Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "3",
+      "chapterId": "5",
+      "amount": "0.01",
+      "success": true,
+      "error": null,
+      "timestamp": "2025-11-23T05:31:19.208Z"
+    }
+  ]
+}

@@ -20,6 +20,20 @@
       "seriesTitle": "Void Walker",
       "seriesCover": "https://i.imgur.com/K4rJpK3.jpeg",
       "timestamp": "2025-11-23T03:47:01.926Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "5",
+      "seriesTitle": "Undercover Duchess",
+      "seriesCover": "https://i.imgur.com/Cy0DYt1.jpeg",
+      "timestamp": "2025-11-23T04:14:28.404Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "3",
+      "seriesTitle": "Echoes of Silence",
+      "seriesCover": "https://i.imgur.com/KJYPL3U.jpeg",
+      "timestamp": "2025-11-23T04:35:49.993Z"
     }
   ]
 }

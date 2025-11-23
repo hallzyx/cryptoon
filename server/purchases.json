@@ -4,41 +4,41 @@
       "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
       "seriesId": "1",
       "chapterId": "5",
-      "txHash": "x402-payment",
-      "amount": "0.01 USDC",
-      "timestamp": "2025-11-23T00:05:18.304Z"
+      "txHash": "0xe78c9aa3db92752ee260de559aac608f187706692fd43aedf52cf0ae736cad70",
+      "amount": "0.01",
+      "timestamp": "2025-11-23T05:31:03.114Z"
     },
     {
       "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
       "seriesId": "4",
       "chapterId": "5",
-      "txHash": "x402-payment",
-      "amount": "0.01 USDC",
-      "timestamp": "2025-11-23T00:28:46.510Z"
+      "txHash": "0x8b855121dbfaf7ef727682cfd61412d427ea06da59d7de3278718897603d1fde",
+      "amount": "0.01",
+      "timestamp": "2025-11-23T05:31:07.383Z"
     },
     {
       "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
-      "seriesId": "2",
+      "seriesId": "6",
       "chapterId": "5",
-      "txHash": "x402-payment",
-      "amount": "0.01 USDC",
-      "timestamp": "2025-11-23T02:20:32.066Z"
-    },
-    {
-      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
-      "seriesId": "3",
-      "chapterId": "5",
-      "txHash": "x402-payment",
-      "amount": "0.01 USDC",
-      "timestamp": "2025-11-23T02:21:24.666Z"
+      "txHash": "0xb9ffd4eb5d4ba5d4b6a37ffd4f55fd23b40abc376a4faaa5f84800a03be2e691",
+      "amount": "0.01",
+      "timestamp": "2025-11-23T05:31:11.684Z"
     },
     {
       "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
       "seriesId": "5",
       "chapterId": "5",
-      "txHash": "x402-payment",
-      "amount": "0.01 USDC",
-      "timestamp": "2025-11-23T02:22:48.113Z"
+      "txHash": "0xf8aa1179b374f09e297935ae2c0518f75ab9932a53b92f72b7d412aa491e8bb4",
+      "amount": "0.01",
+      "timestamp": "2025-11-23T05:31:15.487Z"
+    },
+    {
+      "address": "0xebc554174f98b58cbac8ec7d474f81d9273b255c",
+      "seriesId": "3",
+      "chapterId": "5",
+      "txHash": "0x6fc14a95d1856377e16ad51883d6ad8f60fa55d69b3d1df86151fa176aadd52c",
+      "amount": "0.01",
+      "timestamp": "2025-11-23T05:31:19.207Z"
     }
   ]
 }

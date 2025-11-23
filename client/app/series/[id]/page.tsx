@@ -248,11 +248,9 @@ export default function SeriesDetailPage() {
                           </Link>
 
                           {/* Configuration */}
-                          <button
-                            onClick={() => {
-                              setShowProfileMenu(false);
-                              alert('Configuration page coming soon!');
-                            }}
+                          <Link
+                            href="/settings"
+                            onClick={() => setShowProfileMenu(false)}
                             className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-purple-900/30 transition-colors text-left"
                           >
                             <FaCog className="text-gray-400" />
@@ -260,7 +258,7 @@ export default function SeriesDetailPage() {
                               <div className="text-sm text-white">Configuration</div>
                               <div className="text-xs text-gray-400">Settings & preferences</div>
                             </div>
-                          </button>
+                          </Link>
 
                           {/* Divider */}
                           <div className="border-t border-purple-500/20 my-1"></div>
