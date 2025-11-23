@@ -133,50 +133,129 @@ This feature showcases the **full versatility of x402 protocol** by implementing
 ### Prerequisites
 
 - Node.js v18+
+- npm or yarn
 - CDP Project from https://portal.cdp.coinbase.com/
+- Git
 
-### Installation
+### 1. Clone the Repository
 
-\`\`\`bash
-# Install all dependencies
+```bash
+git clone https://github.com/hallzyx/x402-demo.git
+cd x402-demo/cryptoon
+```
+
+### 2. Install Dependencies
+
+```bash
+# Install all dependencies (root, server, and client)
 npm run setup
 
 # Or manually:
 cd server && npm install
 cd ../client && npm install
-\`\`\`
+cd ..
+```
 
-### Configuration
+### 3. Configure Environment Variables
 
-1. Server setup:
-\`\`\`bash
+#### Server Configuration
+
+```bash
 cd server
 cp .env.example .env
-# Edit .env with your CDP credentials
-\`\`\`
+```
 
-2. Client setup:
-\`\`\`bash
+Edit `server/.env` with your CDP credentials:
+
+```env
+# Receiver wallet for payments
+RECEIVER_WALLET=0xYourWalletAddress
+
+# CDP API Credentials (from https://portal.cdp.coinbase.com/)
+CDP_API_KEY_ID=your-uuid-key-id
+CDP_API_KEY_SECRET=your-base64-secret
+
+# CDP Wallet Secret (PEM format)
+CDP_WALLET_SECRET="-----BEGIN EC PRIVATE KEY-----\nYourPrivateKey\n-----END EC PRIVATE KEY-----"
+
+# Server port (optional)
+PORT=3001
+```
+
+#### Client Configuration (Optional)
+
+```bash
 cd client
 cp .env.example .env.local
-\`\`\`
+```
 
-### Start Development
+Edit `client/.env.local` if needed:
 
-\`\`\`bash
-# Start both servers
+```env
+NEXT_PUBLIC_CDP_PROJECT_ID=your-cdp-project-id
+NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_NETWORK=base-sepolia
+NEXT_PUBLIC_CHAIN_ID=84532
+```
+
+### 4. Start the Application
+
+#### Option A: Start Both Servers Together
+
+```bash
+# From project root
+npm run dev
+```
+
+This will start:
+- Backend server: http://localhost:3001
+- Frontend client: http://localhost:3000
+
+#### Option B: Start Servers Separately
+
+```bash
+# Terminal 1: Start backend
+cd server
 npm run dev
 
-# Or separately:
-npm run dev:server  # http://localhost:3001
-npm run dev:client  # http://localhost:3000
-\`\`\`
+# Terminal 2: Start frontend
+cd client
+npm run dev
+```
+
+### 5. Verify Installation
+
+Run the readiness check script:
+
+```bash
+./check-readiness.sh
+```
+
+Expected output:
+```
+✅ Node.js version check passed
+✅ npm version check passed
+✅ Dependencies installed
+✅ Environment files configured
+✅ Security checks passed
+
+ALL CHECKS PASSED! You're ready to go.
+```
+
+### 6. Access the Application
+
+Open your browser and navigate to:
+- **Frontend:** http://localhost:3000
+- **Admin Dashboard:** http://localhost:3000/admin
+- **API Health Check:** http://localhost:3001/health
 
 ---
 
-## Demo
+## Documentation
 
-See [DEMO.md](./DEMO.md) for complete 4-minute demo script
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Complete technical documentation, payment flows, and CDP integration details
+- **[CHECKLIST.md](./CHECKLIST.md)** - Pre-hackathon verification checklist and testing guide
+- **check-readiness.sh** - Automated verification script
 
 ---
 

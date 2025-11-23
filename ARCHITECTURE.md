@@ -401,28 +401,74 @@ flowchart LR
 
 **Endpoint:**
 ```javascript
-// n8n webhook endpoint
-POST https://your-n8n-instance.com/webhook/recommendations
+// n8n webhook endpoint (actual implementation)
+POST https://n8n.arroz.dev/webhook/cryptoon-recommendation
 
-// Request body
+// Request body (from server/index.js)
 {
   "userId": "0xUserAddress",
-  "preferences": ["action", "sci-fi"],
-  "readHistory": [1, 3, 5]
+  "prompt": "I want to read something about time traveling",  // User's natural language request
+  "paid": true,
+  "amount": "0.01 USDC",
+  "timestamp": "2025-11-23T04:30:00.000Z"
 }
 
-// Response
+// Response (n8n + OpenAI analyzes platform's manga catalog and responds)
+[
+  {
+    "output": "Based on your interest in time traveling, I highly recommend 'Chronos Paradox'! It's a thrilling sci-fi manga that explores time travel paradoxes with complex character development. The series is available on our platform with the first 4 chapters free to read. You'll love how it handles temporal mechanics and the consequences of changing the past."
+  }
+]
+
+// The AI analyzes:
+// - Available manga series on the platform
+// - User's natural language prompt
+// - Series genres, themes, and descriptions
+// - Returns personalized recommendation from platform catalog
+
+// Alternative response formats supported:
 {
-  "recommendations": [
-    {
-      "seriesId": 2,
-      "title": "Mecha Heart",
-      "genre": "sci-fi",
-      "score": 0.95,
-      "reason": "Based on your love for sci-fi and action"
-    }
-  ]
+  "output": "recommendation text"
 }
+// or
+{
+  "recommendation": "recommendation text"
+}
+// or
+{
+  "message": "recommendation text"
+}
+```
+
+**How It Works:**
+
+1. User asks in natural language: "I want to read something about time traveling"
+2. Backend sends prompt to n8n webhook with payment verification
+3. n8n workflow passes prompt to Gemini with context about platform's manga catalog
+4. Gemini analyzes available series and generates personalized recommendation
+5. Response recommends actual manga available on Cryptoon platform
+6. Frontend displays AI-generated recommendation to user
+
+**Backend Processing (server/index.js):**
+```javascript
+const webhookResponse = await fetch('https://n8n.arroz.dev/webhook/cryptoon-recommendation', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    userId,
+    prompt,
+    paid: true,
+    amount: "0.01 USDC",
+    timestamp: new Date().toISOString()
+  })
+});
+
+const webhookData = await webhookResponse.json();
+
+// Extract recommendation from various response formats
+let recommendation = "Recommendation generated successfully!";
+if (Array.isArray(webhookData) && webhookData.length > 0 && webhookData[0].output) {
+  recommendation = webhookData[0].output;
 ```
 
 **Status:** ✅ Functional (n8n workflow deployed)
